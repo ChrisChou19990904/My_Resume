@@ -1,10 +1,320 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>履歷表 - 周彥廷</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #eef0f4;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 14px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Header */
+        .header-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+            flex-wrap: wrap;
+            padding: 25px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #d8e4ff 0%, #eef3ff 100%);
+            border-left: 6px solid #6b8cff;
+        }
+
+        .profile-photo {
+            width: 160px;
+            height: 160px;
+            border-radius: 16px;
+            object-fit: cover;
+            border: 4px solid #ddd;
+        }
+
+        .name-box {
+            flex: 1;
+            min-width: 240px;
+            text-align: right;
+        }
+        .name-box h1 {
+            margin: 0;
+            font-size: 2.6rem;
+            color: #2a3365;
+        }
+        .name-box p {
+            font-size: 1rem;
+            color: #444;
+        }
+
+        /* Section */
+        .section {
+            margin-top: 35px;
+        }
+        .section h2 {
+            border-left: 6px solid #6b8cff;
+            padding-left: 10px;
+            color: #2b3377;
+            margin-bottom: 15px;
+            font-size: 1.7rem;
+        }
+
+        /* Items */
+        .item-title {
+            font-weight: bold;
+            color: #222;
+        }
+        .item-subtitle {
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        ul {
+            padding-left: 22px;
+        }
+
+        /* Skills 多欄設計 */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-block {
+            background: #f6f7ff;
+            padding: 15px 20px;
+            border-radius: 12px;
+            border: 1px solid #dbe1ff;
+        }
+
+        .skill-block h3 {
+            margin-top: 0;
+            font-size: 1.1rem;
+            color: #374290;
+        }
+
+        .skill-block ul {
+            margin-top: 8px;
+        }
+        /* Projects 區塊額外樣式 */
+        .project-title {
+            font-weight: bold;
+            color: #1a73e8;
+        }
+        .project-subtitle {
+            color: #555;
+            font-size: 0.95rem;
+        }
+        .project-list li {
+            margin-bottom: 15px;
+        }
+
+        /* Certificates image */
+        #toeic, #jlpt, #TQC+, #ITS_Java {
+            width: 360px;
+            border-radius: 12px;
+            border: 3px solid #ccc;
+            margin-top: 8px;
+        }
+        a{
+            color: #2980b9;
+            text-decoration: underline;
+        }
+        a:visited {
+            color: #2980b9;
+        }
+
+        @media (max-width: 600px) {
+            .name-box { text-align: center; }
+            .header-box { justify-content: center; text-align: center; }
+            .profile-photo { width: 130px; height: 130px; }
+            #toeic { width: 100%; height: auto; }
+        }
+    </style>
 </head>
+
 <body>
-$END$
+<div class="container">
+
+    <!-- Header -->
+    <div class="header-box">
+        <img src="理平頭.jpg" alt="Profile Photo" class="profile-photo" />
+        <div class="name-box">
+            <h1>周彥廷</h1>
+            <p>📧 Email: chou.yenting@gmail.com　|　📱 Phone: 0977-203-867</p>
+        </div>
+    </div>
+
+    <!-- Education -->
+    <div class="section">
+        <h2>🎓 學歷 Education</h2>
+        <ul>
+            <li>
+                <span class="item-title">逢甲大學 資訊工程學系 學士後專班</span><br>
+                <span class="item-subtitle">2025 年 2 月 – 至今</span>
+            </li>
+            <li>
+                <span class="item-title">國立嘉義大學 外國語言學系（應用外語組）– 學士</span><br>
+                <span class="item-subtitle">2020 年 9 月 – 2023 年 6 月</span>
+            </li>
+            <li>
+                <span class="item-title">國立臺灣海洋大學 電機工程學系（肄業）</span><br>
+                <span class="item-subtitle">2018 年 9 月 – 2020 年 2 月</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Technical Experience -->
+    <div class="section">
+        <h2>💻 技術經歷 Technical Experience</h2>
+        <ul>
+            <li>
+                <span class="item-title">恆逸教育訓練中心 – Java 全端工程師課程</span><br>
+                <span class="item-subtitle">後端：Java、Java Servlet、JSP</span><br>
+                <span class="item-subtitle">前端：HTML、CSS、JavaScript</span><br>
+                <span class="item-subtitle">資料庫：MySQL</span><br>
+                <span class="item-subtitle">說明：了解 Client–Server 架構，熟悉 Servlet 與 JSP 協作流程（MVC 初階概念）</span>
+            </li>
+
+            <li>
+                <span class="item-title">逢甲大學 – 資訊工程學系學士後專班（現就讀）</span><br>
+                <span class="item-subtitle">後端：Java、Spring Boot（IntelliJ IDEA）</span><br>
+                <span class="item-subtitle">前端：Vue 3、Vite、Pinia（WebStorm）</span><br>
+                <span class="item-subtitle">資料庫：Supabase（PostgreSQL）</span><br>
+                <span class="item-subtitle">測試與除錯：JUnit 單元測試</span><br>
+                <span class="item-subtitle">前端技術：RWD 響應式設計</span><br>
+                <span class="item-subtitle">部署：GitHub Pages</span><br>
+                <span class="item-subtitle">說明：具備前後端分離、RESTful API 建置能力，能完成開發 → 測試 → 佈署全流程</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Certifications -->
+    <div class="section">
+        <h2>📜 證照 Certifications</h2>
+        <ul>
+            <li>TOEIC 740<br><img id="toeic" src="多益成績.png" alt="多益成績"></li>
+            <li>JLPT N3<br><img id="jlpt" src="JLPTN3.png" alt="日檢成績"></li>
+            <li>TQC+ Python<br><img id="TQC+" src="TQC+Python.png" alt="Python"></li>
+            <li>ITS Java<br><img id="ITS_Java" src="ITS_Java.png" alt="Java"></li>
+        </ul>
+    </div>
+
+    <!-- Skills -->
+    <div class="section">
+        <h2>🛠️ 技能 Skills</h2>
+
+        <div class="skills-grid">
+
+            <div class="skill-block">
+                <h3>💡 程式語言 Programming</h3>
+                <ul>
+                    <li>Java（主力）</li>
+                    <li>Python</li>
+                    <li>JavaScript</li>
+                </ul>
+            </div>
+
+            <div class="skill-block">
+                <h3>🖥️ 後端 Back-End</h3>
+                <ul>
+                    <li>Spring Boot</li>
+                    <li>Java Servlet</li>
+                    <li>JSP</li>
+                    <li>RESTful API</li>
+                    <li>JUnit 單元測試</li>
+                </ul>
+            </div>
+
+            <div class="skill-block">
+                <h3>🌐 前端 Front-End</h3>
+                <ul>
+                    <li>Vue 3 / Vite / Pinia</li>
+                    <li>HTML / CSS / JavaScript</li>
+                    <li>RWD 響應式設計</li>
+                </ul>
+            </div>
+
+            <div class="skill-block">
+                <h3>📊 資料庫 Databases</h3>
+                <ul>
+                    <li>PostgreSQL（Supabase）</li>
+                    <li>MySQL</li>
+                </ul>
+            </div>
+
+            <div class="skill-block">
+                <h3>🛠️ 工具 Tools</h3>
+                <ul>
+                    <li>IntelliJ IDEA（後端）</li>
+                    <li>WebStorm（前端）</li>
+                    <li>Git & GitHub</li>
+                    <li>GitHub Pages 部署</li>
+                </ul>
+            </div>
+
+            <div class="skill-block">
+                <h3>🤝 軟技能 Soft Skills</h3>
+                <ul>
+                    <li>跨領域學習能力</li>
+                    <li>團隊合作與溝通</li>
+                    <li>問題解決能力</li>
+                    <li>自主學習</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📂 前端作品集 Front-End Projects</h2>
+        <ul class="project-list">
+            <li>
+                <span class="project-title"><a href="https://chrischou19990904.github.io/JLPT_N3" target="_blank">日文教學網站 (15 頁)</a></span><br>
+                <span class="project-subtitle">HTML / CSS / JavaScript<br>
+                分享日文 N3 學習過程、語法與單字知識，包含測驗題與發音按鈕。部分頁面使用響應式設計。</span>
+            </li>
+            <li>
+                <span class="project-title"><a href="https://chrischou19990904.github.io/Marimba_App_Introduction">樂器演奏與數位樂器分析網站 (13 頁)</a></span><br>
+                <span class="project-subtitle">HTML / CSS / JavaScript<br>
+                展示鋼琴演奏影片、分析 Perfect Piano 與 Marimba Real 特性及運作原理，提供互動分析與錄影觀察結果。</span>
+            </li>
+            <li>
+                <span class="project-title"><a href="https://chrischou19990904.github.io/race_distribution/why_euporean_caucasians_in_animations_where_mongolians_are_majority_are_blondes_with_blue_eyes.html" target="_blank">世界人種分布科普網站 (6 頁)</a></span><br>
+                <span class="project-subtitle">HTML / CSS / JavaScript<br>
+                系統性整理亞洲、歐洲、非洲人種特徵與歷史背景，解釋動畫與遊戲角色設計現象，教育性強。</span>
+            </li>
+            <li>
+                <span class="project-title"><a href="https://chrischou19990904.github.io/weapon_realistic/index.html" target="_blank">實用與虛構武器科普網站 (5 頁)</a></span><br>
+                <span class="project-subtitle">HTML / CSS / JavaScript / Chart.js<br>
+                分析武器實用性、遊戲武器機制、奇幻世界觀對比現實、以及中世紀衛生與潔牙知識，兼具科普與互動。</span>
+            </li>
+            <li>
+                <span class="project-title"><a href="https://chrischou19990904.github.io/jiangshi_vampire_zombie/if_edward_cullen_were_born_in_taiwan.html" target="_blank">吸血鬼文化分析網站 (15 頁)</a></span><br>
+                <span class="project-subtitle">HTML / CSS / JavaScript / Chart.js<br>
+                講解吸血鬼這個當紅IP在不同作品中的能力與弱點以及每部作品欲表達的意涵，具備文化研究與社會隱喻。</span>
+            </li>
+            <li>
+                <span class="project-title"><a href="https://chrischou19990904.github.io/religion_is_fake/change_of_christianity_and_crucifix.html" target="_blank">宗教vs科學分析網站 (10 頁)</a></span><br>
+                <span class="project-subtitle">HTML / CSS / JavaScript<br>
+                講解不同宗教的起源、教義、故事、世界觀、以及它們與科學相違背的地方，既有歷史教育也好意提醒人們切勿迷信。</span>
+            </li>
+        </ul>
+    </div>
+
+</div>
 </body>
 </html>
+
