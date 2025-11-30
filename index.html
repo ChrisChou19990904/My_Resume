@@ -312,30 +312,30 @@
         </div>
     </div>
     <div class="section">
-        <h2>🌐 全端作品 Full-Stack Project</h2>
+        <h2>🌐 全端實戰作品 Full-Stack E-commerce Project</h2>
         <ul class="project-list">
             <li>
-            <span class="project-title">
-                <a href="#">全端外語學習電子書商城 (Language Learning E-commerce Platform)</a>
-            </span>
+        <span class="project-title">
+            <a href="#">外語學習**實體書**商城 (Language Learning Book Platform)</a>
+        </span>
                 <span style="font-size: 0.9em; font-weight: bold; color: #ff6347;">[開發中 - In Development]</span>
                 <br>
                 <span class="project-subtitle">
-                **技術棧：** Java (Spring Boot, Spring Security, JPA) / Vue.js 3 (Vite, Pinia, Vue Router)<br>
-                **專案特色與架構：** 專注於外語學習書籍市場，核心程式碼已完成編寫。本系統實現了複雜的電子商務業務流程，並採用前後端分離的高效架構。
-            </span>
+            **技術棧：** Java (Spring Boot, Spring Security, JPA) / Vue.js 3 (Vite, Pinia, Vue Router)<br>
+            **專案特色與架構：** 專注於外語學習書籍市場，採用前後端分離架構。核心程式碼已完成編寫，旨在實作**高可靠性**的電子商務核心業務流程。
+        </span>
                 <ol style="margin-top: 5px; margin-bottom: 5px;">
                     <li>
-                        **核心業務邏輯：** 實作購物車 (Cart) 管理、**原子結帳事務 (Transaction)**、和**書籍庫存的精確扣減**。
+                        **高可靠性事務處理：** 實現**原子結帳事務 (ACID Transaction)**，確保在多用戶操作下，**實體書庫存能被精確、安全地扣減**，避免超賣問題。
                     </li>
                     <li>
-                        **高效查詢功能：** 後端支持**按學習語言分類的動態搜尋**，前端實現快速切換內容展示，以及精準的關鍵字模糊搜尋。
+                        **高效查詢與篩選：** 後端支持**按學習語言分類**、多條件組合的動態搜尋；前端利用 Vue.js 實現快速、響應式的內容展示與模糊搜尋。
                     </li>
                     <li>
-                        **安全與認證：** 後端利用 Spring Security 結合 JWT 實現 API 認證；前端透過 Pinia Store (Auth) 管理狀態，並實作 Vue Router 守衛，嚴格區分 **Admin 與 Member 權限**。
+                        **安全與授權管理：** 後端採用 Spring Security 結合 **JWT (JSON Web Token)** 實現 API 無狀態認證；前端透過 Pinia Store 管理 Auth 狀態並實作 Vue Router 守衛，嚴格控制 **Admin/Member 權限分級**。
                     </li>
                     <li>
-                        **架構與整合：** 採用服務層分離設計，並通過 Axios 封裝，實現 Vue/Pinia 與 Spring Boot API 的穩定通信。
+                        **架構與整合：** 採用服務層分離設計 (Service Layer)，並通過 **Axios 封裝**，實現 Vue/Pinia 與 Spring Boot RESTful API 的穩定通信。
                     </li>
                 </ol>
             </li>
