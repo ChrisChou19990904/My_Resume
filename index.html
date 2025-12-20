@@ -394,20 +394,20 @@
                     <span style="font-size: 0.9em; font-weight: bold; color: #27ae60;">[核心功能完備 - Feature Complete]</span>
                     <br>
                     <span class="project-subtitle">
-                **技術棧：** Java (Spring Boot 3, Spring Security, JPA) / Vue 3 (Vite, Pinia, Vue Router) / MySQL
+                **技術棧：** Java (Spring Boot 3, Spring Security, JPA) / Vue 3 (Vite, Pinia, Vue Router) / PostgreSQL (Supabase)
             </span>
                     <ol style="margin-top: 5px; margin-bottom: 5px;">
                         <li>
-                            **多維度檢索與語種過濾系統：** 實作高效的動態查詢邏輯，支援**關鍵字搜尋**（書名、作者、IBN）與**多達 13 種外語分類**（英、日、韓、法、西、德、義、俄、土、阿、泰、越、印）的下拉式選單篩選。前端透過 Vue 響應式監聽實現無刷新過濾，後端則利用 JPA 動態查詢確保檢索性能。
+                            **動態互動評論系統：** 實作 **UGC (用戶生成內容)** 模組，允許登入會員針對特定書籍發表評論。後端透過實體關聯 (Entity Relationship) 管理書籍與評論的「一對多」數據鏈條，並實作權限驗證機制，確保評論內容的安全與真實性。
                         </li>
                         <li>
-                            **嚴謹的訂單狀態機保護：** 實作具備「原子性」的結帳流程，針對信用卡與貨到付款實作差異化邏輯。透過後端攔截機制，嚴格禁止已付款訂單被誤操作取消，確保金流數據一致性。
+                            **多維度檢索與語種過濾：** 支援關鍵字搜尋（書名、作者、國際書號）與 **13 種外語分類**（英、日、韓、法、西、德、義、俄、土、阿、泰、越、印）的動態篩選，前端結合響應式監聽與後端 JPA 動態查詢，實現流暢的檢索體驗。
                         </li>
                         <li>
-                            **管理端中台系統：** 開發完整的 Admin 後台管理介面，實作動態狀態更新、收件人資訊管理（含電話與地址校驗）。針對貨到付款訂單實作強制性的通訊資訊驗證流程，提升物流準確率。
+                            **嚴謹的訂單狀態機保護：** 實作具備「原子性」的結帳流程，針對信用卡與貨到付款實作差異化邏輯，並透過後端攔截機制嚴格禁止已付款訂單被誤操作，確保金流與物流數據一致性。
                         </li>
                         <li>
-                            **安全與授權管理：** 採用 **JWT** 實現無狀態認證，結合 Spring Security 實作 **Admin/Member 角色權限分級**，並透過 Vue Router 導航守衛嚴格控制非法路徑訪問。
+                            **安全認證與雲端集成：** 採用 **JWT** 實現無狀態認證，並成功集成 **Supabase (PostgreSQL)** 雲端資料庫。前端透過 Axios 封裝與導航守衛實作 Admin/Member 權限分級，並具備完善的錯誤處理機制 (Robustness)。
                         </li>
                         <li>
                             **原子性事務處理 (ACID)：** 深度應用 Spring `@Transactional` 管理結帳事務，確保在多用戶併發操作下，實體書庫存扣減精確，從根本杜絕超賣風險。
