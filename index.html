@@ -384,36 +384,38 @@
 
         </div>
     </div>
-    <div class="section" id="full-end">
-        <h2>🌐 全端實戰作品 Full-Stack E-commerce Project</h2>
-        <ul class="project-list">
-            <li>
-        <span class="project-title">
-            <a href="https://www.notion.so/2cca17d2741180b8aab1fc3fdd84178c" target="_blank">外語學習**實體書**商城 (Language Learning Book Platform)</a>
-        </span>
-                <span style="font-size: 0.9em; font-weight: bold; color: #ff6347;">[開發中 - In Development]</span>
-                <br>
-                <span class="project-subtitle">
-            **技術棧：** Java (Spring Boot, Spring Security, JPA) / Vue.js 3 (Vite, Pinia, Vue Router)<br>
-            **專案特色與架構：** 專注於外語學習書籍市場，採用前後端分離架構。核心程式碼已完成編寫，旨在實作**高可靠性**的電子商務核心業務流程。
-        </span>
-                <ol style="margin-top: 5px; margin-bottom: 5px;">
-                    <li>
-                        **高可靠性事務處理：** 實現**原子結帳事務 (ACID Transaction)**，確保在多用戶操作下，**實體書庫存能被精確、安全地扣減**，避免超賣問題。
-                    </li>
-                    <li>
-                        **高效查詢與篩選：** 後端支持**按學習語言分類**、多條件組合的動態搜尋；前端利用 Vue.js 實現快速、響應式的內容展示與關鍵字搜尋。
-                    </li>
-                    <li>
-                        **安全與授權管理：** 後端採用 Spring Security 結合 **JWT (JSON Web Token)** 實現 API 無狀態認證；前端透過 Pinia Store 管理 Auth 狀態並實作 Vue Router 守衛，嚴格控制 **Admin/Member 權限分級**。
-                    </li>
-                    <li>
-                        **架構與整合：** 採用服務層分離設計 (Service Layer)，並通過 **Axios 封裝**，實現 Vue/Pinia 與 Spring Boot RESTful API 的穩定通信。
-                    </li>
-                </ol>
-            </li>
-        </ul>
-    </div>
+        <div class="section" id="full-end">
+            <h2>🌐 全端實戰作品 Full-Stack E-commerce Project</h2>
+            <ul class="project-list">
+                <li>
+            <span class="project-title">
+                <a href="https://your-notion-link" target="_blank">外語學習書城：全端商務管理系統</a>
+            </span>
+                    <span style="font-size: 0.9em; font-weight: bold; color: #27ae60;">[核心功能完備 - Feature Complete]</span>
+                    <br>
+                    <span class="project-subtitle">
+                **技術棧：** Java (Spring Boot 3, Spring Security, JPA) / Vue 3 (Vite, Pinia, Vue Router) / MySQL
+            </span>
+                    <ol style="margin-top: 5px; margin-bottom: 5px;">
+                        <li>
+                            **多維度檢索與語種過濾系統：** 實作高效的動態查詢邏輯，支援**關鍵字搜尋**（書名、作者）與**多達 13 種外語分類**（英、日、韓、法、西、德、義、俄、土、阿、泰、越、印）的下拉式選單篩選。前端透過 Vue 響應式監聽實現無刷新過濾，後端則利用 JPA 動態查詢確保檢索性能。
+                        </li>
+                        <li>
+                            **嚴謹的訂單狀態機保護：** 實作具備「原子性」的結帳流程，針對信用卡與貨到付款實作差異化邏輯。透過後端攔截機制，嚴格禁止已付款訂單被誤操作取消，確保金流數據一致性。
+                        </li>
+                        <li>
+                            **管理端中台系統：** 開發完整的 Admin 後台管理介面，實作動態狀態更新、收件人資訊管理（含電話與地址校驗）。針對貨到付款訂單實作強制性的通訊資訊驗證流程，提升物流準確率。
+                        </li>
+                        <li>
+                            **安全與授權管理：** 採用 **JWT** 實現無狀態認證，結合 Spring Security 實作 **Admin/Member 角色權限分級**，並透過 Vue Router 導航守衛嚴格控制非法路徑訪問。
+                        </li>
+                        <li>
+                            **原子性事務處理 (ACID)：** 深度應用 Spring `@Transactional` 管理結帳事務，確保在多用戶併發操作下，實體書庫存扣減精確，從根本杜絕超賣風險。
+                        </li>
+                    </ol>
+                </li>
+            </ul>
+        </div>
         <div class="section" id="front-end">
             <h2>📂 前端作品集 Front-End Projects</h2>
 
