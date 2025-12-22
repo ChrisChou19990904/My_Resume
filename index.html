@@ -407,8 +407,8 @@
                             實作 <strong>14 種學習語系下拉式篩選</strong> 與關鍵字（書名、作者、ISBN）複合搜尋。開發過程中成功處理 PostgreSQL 層級的 <code>Check Constraint</code> 約束擴充，展現系統在業務擴張時的底層調優能力。
                         </li>
                         <li>
-                            <strong>異質支付狀態機與庫存補償邏輯：</strong>
-                            針對「信用卡預付」與「貨到付款 (COD)」設計異質的 <strong>訂單狀態機 (Order State Machine)</strong>。系統能根據支付類型動態切換狀態流轉路徑，並於取消訂單時自動觸發庫存回補 (Compensating Transaction)，維持數據一致性。
+                            <strong>嚴謹的異質支付狀態機與支付路徑閉環：</strong>
+                            針對信用卡與 COD 設計異質 <strong>訂單狀態機 (Order State Machine)</strong>。實作 <code>AWAITING_PAYMENT</code> <strong>原子中間狀態</strong>，防止未扣款即跳轉的邏輯漏洞；並開發<strong>「狀態感知支付回溯連結」</strong>，確保用戶在意外斷連後仍能穩定完成交易閉環。
                         </li>
                         <li>
                             <strong>原子性事務處理 (ACID) 與併發控制：</strong>
@@ -417,6 +417,10 @@
                         <li>
                             <strong>無狀態認證與法律合規性設計：</strong>
                             採用 <strong>JWT</strong> 實現前後端分離認證，並主動實作 Demo 模式警示機制，於支付環節標註「模擬交易」警語，體現對個人資料安全與法律規範的專業意識。
+                        </li>
+                        <li>
+                            <strong>生產環境部署優化與 SPA 路由重定向：</strong>
+                            獨立完成 Docker 容器化部署。針對 SPA 在生產環境下<strong>「頁面刷新導致 404」</strong>的典型衝突，透過配置 <code>vercel.json</code> 的 <strong>Rewrite 轉發規則</strong> 重新定義伺服器請求路徑，確保前端路由與伺服器環境的無縫銜接。
                         </li>
                     </ol>
                 </li>
