@@ -365,10 +365,10 @@
             <div class="skill-block">
                 <h3>🛠️ 工具 Tools</h3>
                 <ul>
-                    <li>IntelliJ IDEA（後端）</li>
-                    <li>WebStorm（前端）</li>
-                    <li>Git & GitHub</li>
-                    <li>GitHub Pages 部署</li>
+                    <li>IntelliJ IDEA（後端開發環境）</li>
+                    <li>WebStorm（前端開發環境）</li>
+                    <li>GitHub Pages（純前端網頁託管平台）</li>
+                    <li>Docker（全端網站託管平台）</li>
                 </ul>
             </div>
 
@@ -411,8 +411,8 @@
                             針對信用卡與 COD 設計異質 <strong>訂單狀態機 (Order State Machine)</strong>。實作 <code>AWAITING_PAYMENT</code> <strong>原子中間狀態</strong>，防止未扣款即跳轉的邏輯漏洞；並開發<strong>「狀態感知支付回溯連結」</strong>，確保用戶在意外斷連後仍能穩定完成交易閉環。
                         </li>
                         <li>
-                            <strong>原子性事務處理 (ACID) 與併發控制：</strong>
-                            深度應用 Spring <code>@Transactional</code> 管理結帳與狀態變更事務。確保在多用戶下單場景下，資料庫操作具備原子性，從程式碼層級徹底杜絕「超賣」與數據冗餘風險。
+                            <strong>原子性事務 (ACID) 與庫存自動補償邏輯：</strong>
+                            深度應用 Spring <code>@Transactional</code> 管理事務。除了確保下單時的原子性以防止超賣，更實作了<strong>「訂單取消自動回補」機制</strong>：當訂單狀態轉為 <code>CANCELLED</code> 時，系統自動觸發庫存補償邏輯，確保數據最終一致性。
                         </li>
                         <li>
                             <strong>無狀態認證與法律合規性設計：</strong>
