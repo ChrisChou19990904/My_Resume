@@ -407,7 +407,7 @@
                 <strong>技術棧：</strong> Java (Spring Boot 3, Spring Security, JPA) / Vue 3 (Composition API, Pinia) / PostgreSQL / Docker
             </span>
 
-                    <ol style="margin-top: 10px; line-height: 1.6;">
+                    <ul style="margin-top: 10px; line-height: 1.6; list-style-type: disc;">
                         <li>
                             <strong>動態互動評論與數據關聯 (UGC System)：</strong>
                             實作用戶生成內容模組，利用 JPA 實體關聯管理 Book-User-Review 的複雜數據鏈條。結合 Spring Security 權限驗證，確保只有登入用戶可發布內容，達成完整的業務邏輯閉環。
@@ -432,7 +432,7 @@
                             <strong>生產環境部署優化與 SPA 路由重定向：</strong>
                             獨立完成 Docker 容器化部署。針對 SPA 在生產環境下<strong>「頁面刷新導致 404」</strong>的典型衝突，透過配置 <code>vercel.json</code> 的 <strong>Rewrite 轉發規則</strong> 重新定義伺服器請求路徑，確保前端路由與伺服器環境的無縫銜接。
                         </li>
-                    </ol>
+                    </ul>
                 </li>
                 <li>
             <span class="project-title" style="font-size: 1.2em; font-weight: bold;">
@@ -444,7 +444,7 @@
                 <strong>技術棧：</strong> Java (Spring Boot 3) / Vue 3 (Composition API, Pinia) / Axios / OpenWeather API / Render / GitHub Pages
             </span>
 
-                    <ol style="margin-top: 10px; line-height: 1.6;">
+                    <ul style="margin-top: 10px; line-height: 1.6; list-style-type: disc;">
                         <li>
                             <strong>異構平台跨網域 (CORS) 通訊調優：</strong>
                             實作部署於不同雲端平台（Render/後端、GitHub Pages/前端）的架構。針對 Production 環境開發 <strong>動態 Base URL 切換邏輯</strong>，並精準配置 Spring Security CORS 策略，解決跨網域請求的安全限制。
@@ -461,7 +461,7 @@
                             <strong>生產環境靜態部署優化：</strong>
                             獨立解決 GitHub Pages 子路徑下的 <strong>Asset 資源路徑偏移問題 (Vite Base Path)</strong>，並撰寫自動化部署腳本提升發布效率，確保 SPA 專案在雲端環境穩定渲染。
                         </li>
-                    </ol>
+                    </ul>
                 </li>
             </ol>
         </div>
