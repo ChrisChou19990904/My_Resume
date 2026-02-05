@@ -154,6 +154,11 @@
         a:visited {
             color: #2980b9;
         }
+        #full-stack-project ol > li::marker {
+            font-size: 1.2em;      /* 🌟 讓數字直接放大到 1.2em */
+            font-weight: bold;    /* 🌟 讓數字變粗，與標題對齊 */
+            color: #333;          /* 設定顏色 */
+        }
 
         @media (max-width: 600px) {
             .name-box { text-align: center; }
@@ -213,7 +218,7 @@
             <li><a href="#car-license">汽車駕照（自排） Car Driving License (Automatic Transmission)</a></li>
             <li><a href="#motor-license">普通重型機車駕照 Motorcycle License (Standard Heavy)</a></li>
             <li><a href="#skill">🛠️ 技能 Skills</a></li>
-            <li><a href="#full-stack-project">🌐 全端實戰作品 Full-Stack E-commerce Project</a></li>
+            <li><a href="#full-stack-project">🌐 全端實戰作品集 Full-Stack Projects</a></li>
             <li><a href="#front-end">📂 前端作品集 Front-End Projects</a></li>
         </ul>
     </div>
@@ -390,13 +395,13 @@
         </div>
     </div>
         <div class="section" id="full-stack-project">
-            <h2>🌐 全端實戰作品 Full-Stack E-commerce Project</h2>
-            <ul class="project-list" style="list-style: none; padding-left: 0;">
+            <h2>🌐 全端實戰作品集 Full-Stack Development Projects</h2>
+            <ol class="project-list" style="padding-left: 0;">
                 <li>
             <span class="project-title" style="font-size: 1.2em; font-weight: bold;">
                 <a href="https://foreign-languages-book.vercel.app/" target="_blank">外語學習書城：全端商務管理系統</a>
             </span>
-                    <span style="font-size: 0.9em; font-weight: bold; color: #27ae60; margin-left: 10px;">[核心功能完備 - Feature Complete]</span>
+                    <span style="font-size: 0.9em; font-weight: bold; color: #27ae60; margin-left: 10px;">[複雜業務邏輯與安全驗證]</span>
                     <br>
                     <span class="project-subtitle" style="color: #7f8c8d; font-style: italic;">
                 <strong>技術棧：</strong> Java (Spring Boot 3, Spring Security, JPA) / Vue 3 (Composition API, Pinia) / PostgreSQL / Docker
@@ -429,7 +434,36 @@
                         </li>
                     </ol>
                 </li>
-            </ul>
+                <li>
+            <span class="project-title" style="font-size: 1.2em; font-weight: bold;">
+                <a href="https://chrischou19990904.github.io/weather_app_frontend/" target="_blank">即時天氣觀測站：第三方 API 整合與跨雲端部署實踐</a>
+            </span>
+                    <span style="font-size: 0.9em; font-weight: bold; color: #27ae60; margin-left: 10px;">[外部數據整合與連通]</span>
+                    <br>
+                    <span class="project-subtitle" style="color: #7f8c8d; font-style: italic;">
+                <strong>技術棧：</strong> Java (Spring Boot 3) / Vue 3 (Composition API, Pinia) / Axios / OpenWeather API / Render / GitHub Pages
+            </span>
+
+                    <ol style="margin-top: 10px; line-height: 1.6;">
+                        <li>
+                            <strong>異構平台跨網域 (CORS) 通訊調優：</strong>
+                            實作部署於不同雲端平台（Render/後端、GitHub Pages/前端）的架構。針對 Production 環境開發 <strong>動態 Base URL 切換邏輯</strong>，並精準配置 Spring Security CORS 策略，解決跨網域請求的安全限制。
+                        </li>
+                        <li>
+                            <strong>第三方 RESTful API 深度整合：</strong>
+                            串接 <strong>OpenWeatherMap API</strong> 擷取即時氣象數據。實作 <strong>Axios 攔截器 (Interceptors)</strong> 集中處理 Request 異常，並設定合理的 Timeout 機制以優化免費雲端伺服器冷啟動 (Cold Start) 時的用戶體驗。
+                        </li>
+                        <li>
+                            <strong>狀態管理與數據持久化 (CRUD)：</strong>
+                            利用 <strong>Pinia</strong> 建立響應式狀態中心，協調搜尋結果與歷史紀錄組件間的資料同步。結合 <strong>H2 嵌入式資料庫</strong> 實作搜尋足跡持久化，確保用戶能在應用程式生命週期內追蹤檢索紀錄。
+                        </li>
+                        <li>
+                            <strong>生產環境靜態部署優化：</strong>
+                            獨立解決 GitHub Pages 子路徑下的 <strong>Asset 資源路徑偏移問題 (Vite Base Path)</strong>，並撰寫自動化部署腳本提升發布效率，確保 SPA 專案在雲端環境穩定渲染。
+                        </li>
+                    </ol>
+                </li>
+            </ol>
         </div>
         <div class="section" id="front-end">
             <h2>📂 前端作品集 Front-End Projects</h2>
