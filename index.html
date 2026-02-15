@@ -176,6 +176,10 @@
             iframe{
                 max-width: 100%;
             }
+            #code1, #code2, #code3, #code4, #code5, #code6, #code7, #code8, #code9 {
+                width: 100%;
+                height: auto;
+            }
         }
     </style>
 </head>
@@ -399,39 +403,56 @@
             <h2>🌐 全端實戰作品集 Full-Stack Development Projects</h2>
             <ol class="project-list" style="padding-left: 0;">
                 <li>
-            <span class="project-title" style="font-size: 1.2em; font-weight: bold;">
-                <a href="https://foreign-languages-book.vercel.app/" target="_blank">外語學習書城：全端商務管理系統</a>
-            </span>
-                    <span style="font-size: 0.9em; font-weight: bold; color: #27ae60; margin-left: 10px;">[複雜業務邏輯與安全驗證]</span>
+    <span class="project-title" style="font-size: 1.2em; font-weight: bold;">
+        <a href="https://foreign-languages-book.vercel.app/" target="_blank">外語學習書城：全端商務管理系統</a>
+    </span>
+                    <span style="font-size: 0.9em; font-weight: bold; color: #27ae60; margin-left: 10px;">[雙端分流：B2C 互動系統 + Admin ERP]</span>
                     <br>
                     <span class="project-subtitle" style="color: #7f8c8d; font-style: italic;">
-                <strong>技術棧：</strong> Java (Spring Boot 3, Spring Security, JPA) / Vue 3 (Composition API, Pinia) / PostgreSQL / Docker
-            </span>
+        <strong>技術棧：</strong> Java (Spring Boot 3, Spring Security, JPA) / Vue 3 (Composition API, Pinia) / PostgreSQL / Docker
+    </span>
 
                     <ul style="margin-top: 10px; line-height: 1.6; list-style-type: disc;">
                         <li>
-                            <strong>動態互動評論與數據關聯 (UGC System)：</strong>
-                            實作用戶生成內容模組，利用 JPA 實體關聯管理 Book-User-Review 的複雜數據鏈條。結合 Spring Security 權限驗證，確保只有登入用戶可發布內容，達成完整的業務邏輯閉環。
+                            <strong>銷售前台：動態互動評論與 UGC 數據關聯：</strong><br>
+                            實作用戶生成內容 (UGC) 模組，利用 <strong>JPA 實體關聯</strong> 管理 Book-User-Review 之 <code>@ManyToOne</code> 與 <code>@OneToMany</code> 數據鏈條。結合 Spring Security 權限驗證，確保只有登入用戶可發布內容，並於書籍詳情頁面實現響應式評論展示與星級評分功能。如下截圖所示：<br>
+                            <img id="code1" src="螢幕擷取畫面%202026-02-15%20225532.png" alt="書籍詳情與評論" style="width:523px;height:506px;border-radius:12px; border:3px solid #ccc; margin-top:8px;">
+                            <br>
+                            <img id="code2" src="螢幕擷取畫面%202026-02-15%20225406.png" alt="讀者評論列表" style="width:634px;height:313px;border-radius:12px; border:3px solid #ccc; margin-top:8px;">
                         </li>
+
                         <li>
-                            <strong>多維度檢索與高擴展語種篩選：</strong>
-                            實作 <strong>14 種學習語系下拉式篩選</strong> 與關鍵字（書名、作者、ISBN）複合搜尋。開發過程中成功處理 PostgreSQL 層級的 <code>Check Constraint</code> 約束擴充，展現系統在業務擴張時的底層調優能力。
+                            <strong>銷售前台：多維度檢索與支付狀態機閉環：</strong><br>
+                            實作 <strong>14 種學習語系篩選</strong> 與關鍵字複合搜尋。針對信用卡與 COD 設計異質 <strong>訂單狀態機 (Order State Machine)</strong>，包含 <code>AWAITING_PAYMENT</code> 原子中間狀態以防止支付漏洞，並應用 <code>@Transactional</code> 達成庫存自動補償。
                         </li>
+
                         <li>
-                            <strong>嚴謹的異質支付狀態機與支付路徑閉環：</strong>
-                            針對信用卡與 COD 設計異質 <strong>訂單狀態機 (Order State Machine)</strong>。實作 <code>AWAITING_PAYMENT</code> <strong>原子中間狀態</strong>，防止未扣款即跳轉的邏輯漏洞；並開發<strong>「狀態感知支付回溯連結」</strong>，確保用戶在意外斷連後仍能穩定完成交易閉環。
+                            <strong>管理後台：權限生命週期與資料建模 (Admin Dashboard)：</strong><br>
+                            獨立開發會員管理模組，實作基於 <strong>RBAC</strong> 的權限隔離。提供「一鍵啟用/停權」邏輯以調控帳號生命週期，並針對系統迭代實作資料欄位容錯處理，確保在 <strong>Schema Evolution (資料表演進)</strong> 時系統仍能穩定運行。如下截圖所示：<br>
+                            <img id="code3" src="會員管理.png" alt="會員管理系統" style="width:616px;height:513px;border-radius:12px; border:3px solid #ccc; margin-top:8px;">
                         </li>
+
                         <li>
-                            <strong>原子性事務 (ACID) 與庫存自動補償邏輯：</strong>
-                            深度應用 Spring <code>@Transactional</code> 管理事務。除了確保下單時的原子性以防止超賣，更實作了<strong>「訂單取消自動回補」機制</strong>：當訂單狀態轉為 <code>CANCELLED</code> 時，系統自動觸發庫存補償邏輯，確保數據最終一致性。
+                            <strong>管理後台：全功能書籍 CMS 與多語言數據管理：</strong><br>
+                            於後端定義專屬 <strong><code>Language</code> Enum 實體</strong> 封裝 14 種語系與顯示名稱。前端實作互動式彈窗表單、封面預覽與上架狀態動態開關，實現對商品價格、庫存與多語系數據的高效調控。如下截圖所示：<br>
+                            <div style="margin-top:8px;">
+                                <img id="code4" src="螢幕擷取畫面%202026-02-15%20221957.png" alt="書籍管理列表" style="width:770px;height:407px;border-radius:8px; border:1px solid #ccc;">
+                                <img id="code5" src="螢幕擷取畫面%202026-02-15%20222011.png" alt="新增書籍表單" style="width:583px;height:512px;border-radius:8px; border:1px solid #ccc;">
+                                <img id="code6" src="螢幕擷取畫面%202026-02-15%20222022.png" alt="新增書籍表單" style="width:604px;height:508px;border-radius:8px; border:1px solid #ccc;">
+                            </div>
+                            <img id="code7" src="螢幕擷取畫面%202026-02-15%20222809.png" alt="後端 Enum 代碼" style="width:553px;height:372px;border-radius:12px; border:3px solid #ccc; margin-top:8px;">
                         </li>
+
                         <li>
-                            <strong>無狀態認證與法律合規性設計：</strong>
-                            採用 <strong>JWT</strong> 實現前後端分離認證，並主動實作 Demo 模式警示機制，於支付環節標註「模擬交易」警語，體現對個人資料安全與法律規範的專業意識。
+                            <strong>管理後台：高透明度訂單監控與 Master-Detail 佈局：</strong><br>
+                            設計訂單營運中心，採 <strong>Master-Detail (主從式資料)</strong> 佈局展示收件地址、費用明細與商品項目。管理員可即時追蹤訂單流轉狀態並手動更新，體現處理複雜 UI 數據同步之能力。如下截圖所示：<br>
+                            <img id="code8" src="螢幕擷取畫面%202026-02-15%20222232.png" alt="訂單列表" style="width:620px;height:349px;border-radius:8px; border:1px solid #ccc;">
+                            <img id="code9" src="螢幕擷取畫面%202026-02-15%20222313.png" alt="訂單詳情介面" style="width:619px;height:425px;border-radius:8px; border:1px solid #ccc;">
                         </li>
+
                         <li>
-                            <strong>生產環境部署優化與 SPA 路由重定向：</strong>
-                            獨立完成 Docker 容器化部署。針對 SPA 在生產環境下<strong>「頁面刷新導致 404」</strong>的典型衝突，透過配置 <code>vercel.json</code> 的 <strong>Rewrite 轉發規則</strong> 重新定義伺服器請求路徑，確保前端路由與伺服器環境的無縫銜接。
+                            <strong>生產環境部署優化與 SPA 路由重定向：</strong><br>
+                            獨立完成 <strong>Docker 容器化部署</strong>。針對生產環境下「頁面刷新導致 404」之典型衝突，透過配置 <code>vercel.json</code> 的 <strong>Rewrite 轉發規則</strong> 重新定義請求路徑，確保前後端無縫銜接。
                         </li>
                     </ul>
                 </li>
