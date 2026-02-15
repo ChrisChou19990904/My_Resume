@@ -176,7 +176,7 @@
             iframe{
                 max-width: 100%;
             }
-            #code1, #code2, #code3, #code4, #code5, #code6, #code7, #code8, #code9 {
+            #code1, #code2, #code3, #code4, #code5, #code6, #code7, #code8, #code9, #code10, #code11, #code12, #code13, #code14 {
                 width: 100%;
                 height: auto;
             }
@@ -414,6 +414,10 @@
 
                     <ul style="margin-top: 10px; line-height: 1.6; list-style-type: disc;">
                         <li>
+                            <strong>無狀態認證與法律合規性設計 (Security & Compliance)：</strong><br>
+                            採用 <strong>JWT (JSON Web Token)</strong> 實作前後端分離認證機制，確保 API 存取安全性。憑藉專業的法律與安全意識，主動於系統支付流程中實作 <strong>Demo 模式警示機制</strong>，明確標註「模擬交易」警語以符合虛擬實作之法律規範，並體現對用戶個人資料安全防護的嚴謹態度。
+                        </li>
+                        <li>
                             <strong>銷售前台：動態互動評論與 UGC 數據關聯：</strong><br>
                             實作用戶生成內容 (UGC) 模組，利用 <strong>JPA 實體關聯</strong> 管理 Book-User-Review 之 <code>@ManyToOne</code> 與 <code>@OneToMany</code> 數據鏈條。結合 Spring Security 權限驗證，確保只有登入用戶可發布內容，並於書籍詳情頁面實現響應式評論展示與星級評分功能。如下截圖所示：<br>
                             <img id="code1" src="螢幕擷取畫面%202026-02-15%20225532.png" alt="書籍詳情與評論" style="width:523px;height:506px;border-radius:12px; border:3px solid #ccc; margin-top:8px;">
@@ -423,7 +427,17 @@
 
                         <li>
                             <strong>銷售前台：多維度檢索與支付狀態機閉環：</strong><br>
-                            實作 <strong>14 種學習語系篩選</strong> 與關鍵字複合搜尋。針對信用卡與 COD 設計異質 <strong>訂單狀態機 (Order State Machine)</strong>，包含 <code>AWAITING_PAYMENT</code> 原子中間狀態以防止支付漏洞，並應用 <code>@Transactional</code> 達成庫存自動補償。
+                            實作 <strong>14 種學習語系篩選</strong>（下拉式選單）與關鍵字（書名、作者名、國際書號）複合搜尋。針對信用卡與 COD 設計異質 <strong>訂單狀態機 (Order State Machine)</strong>，包含 <code>AWAITING_PAYMENT</code> 原子中間狀態以防止支付漏洞，並應用 <code>@Transactional</code> 達成庫存自動補償。如下截圖所示：<br>
+                            <img id="code10" src="螢幕擷取畫面%202026-02-15%20232626.png" alt="書籍列表與篩選" style="width:675px;height:1021px;border-radius:8px; border:1px solid #ccc;">
+                            <br>
+                            <img id="code11" src="螢幕擷取畫面%202026-02-15%20232641.png" alt="書籍列表與篩選" style="width:670px;height:914px;border-radius:8px; border:1px solid #ccc;">
+                            <br>
+                            <img id="code12" src="螢幕擷取畫面%202026-02-15%20232717.png" alt="書籍列表與篩選" style="width:682px;height:891px;border-radius:8px; border:1px solid #ccc;">
+                            <br>
+                            <img id="code13" src="螢幕擷取畫面%202026-02-15%20232755.png" alt="書籍列表與篩選" style="width:671px;height:888px;border-radius:8px; border:1px solid #ccc;">
+                            <br>
+                            <img id="code14" src="螢幕擷取畫面%202026-02-15%20224306.png" alt="書籍列表與篩選" style="width:738px;height:470px;border-radius:8px; border:1px solid #ccc;">
+                            <br>
                         </li>
 
                         <li>
