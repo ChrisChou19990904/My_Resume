@@ -418,11 +418,17 @@
                             採用 <strong>JWT (JSON Web Token)</strong> 實作前後端分離認證機制，確保 API 存取安全性。憑藉專業的法律與安全意識，主動於系統支付流程中實作 <strong>Demo 模式警示機制</strong>，明確標註「模擬交易」警語以符合虛擬實作之法律規範，並體現對用戶個人資料安全防護的嚴謹態度。
                         </li>
                         <li>
-                            <strong>銷售前台：動態互動評論與 UGC 數據關聯：</strong><br>
-                            實作用戶生成內容 (UGC) 模組，利用 <strong>JPA 實體關聯</strong> 管理 Book-User-Review 之 <code>@ManyToOne</code> 與 <code>@OneToMany</code> 數據鏈條。結合 Spring Security 權限驗證，確保只有登入用戶可發布內容，並於書籍詳情頁面實現響應式評論展示與星級評分功能。如下截圖所示：<br>
+                            <strong>銷售前台：動態互動評論與 UGC 數據時序管理：</strong><br>
+                            實作用戶生成內容 (UGC) 模組，透過 <strong>JPA 實體關聯</strong> 標籤 <code>@ManyToOne(fetch = FetchType.LAZY)</code> 建立 <code>Review</code> 與 <code>Book</code>、<code>User</code> 間的高效數據鏈條。<br>
+                            除了結合 Spring Security 確保只有登入用戶可發布內容外，更實作了 <strong>時序排序邏輯 (Chronological Ordering)</strong>：確保系統能依據資料庫記錄之精確時間戳 (Timestamp) 自動過濾並呈現「最新評論於首位」。<br>
+                            在資料展現層實作了 <strong>數據格式化處理</strong>：資料庫底層採用 <code>@CreationTimestamp</code> 完整紀錄至分秒之精確值，前端則配合 UI 規範優化為僅顯示日期格式，展現兼顧後端數據完整性與前端視覺簡潔性的設計素養。如下截圖所示：<br>
+                            <img src="螢幕擷取畫面%202026-02-18%20230928.png" alt="後端程式碼截圖" style="width:648px;height:486px;border-radius:12px; border:12px solid #ccc; margin-top:8px;">
+                            <br>
                             <img id="code1" src="螢幕擷取畫面%202026-02-15%20225532.png" alt="書籍詳情與評論" style="width:523px;height:506px;border-radius:12px; border:10px solid #ccc; margin-top:8px;">
                             <br>
                             <img id="code2" src="螢幕擷取畫面%202026-02-15%20225406.png" alt="讀者評論列表" style="width:634px;height:313px;border-radius:12px; border:10px solid #ccc; margin-top:8px;">
+                            <br>
+                            <img src="螢幕擷取畫面%202026-02-18%20230225.png" alt="資料庫截圖" style="width:761px;height:301px;border-radius:12px; border:10px solid #ccc; margin-top:8px;">
                         </li>
 
                         <li>
@@ -482,12 +488,12 @@
 
                     <ul style="margin-top: 10px; line-height: 1.6; list-style-type: disc;">
                         <li>
-                            <strong>異構平台跨網域 (CORS) 通訊調優：</strong>
-                            實作部署於不同雲端平台（Render/後端、GitHub Pages/前端）的架構。針對 Production 環境開發 <strong>動態 Base URL 切換邏輯</strong>，並精準配置 Spring Security CORS 策略，解決跨網域請求的安全限制。
+                            <strong>跨域通訊與部署策略：</strong>
+                            前端部署於 GitHub Pages、後端部署於 Render，實作動態 Base URL 切換邏輯，並配置 Spring CORS 策略，確保跨域請求安全且可用。
                         </li>
                         <li>
-                            <strong>第三方 RESTful API 深度整合：</strong>
-                            串接 <strong>OpenWeatherMap API</strong> 擷取即時氣象數據。實作 <strong>Axios 攔截器 (Interceptors)</strong> 集中處理 Request 異常，並設定合理的 Timeout 機制以優化免費雲端伺服器冷啟動 (Cold Start) 時的用戶體驗。
+                            <strong>第三方 RESTful API 整合：</strong>
+                            後端串接 <strong>WeatherAPI</strong> 擷取即時氣象資料，並在 Service 層處理異常與 fallback，確保開發與正式環境皆可穩定運作。
                         </li>
                         <li>
                             <strong>狀態管理與數據持久化 (CRUD)：</strong>
