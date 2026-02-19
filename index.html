@@ -418,7 +418,7 @@
                             採用 <strong>JWT (JSON Web Token)</strong> 實作前後端分離認證機制，確保 API 存取安全性。憑藉專業的法律與安全意識，主動於系統支付流程中實作 <strong>Demo 模式警示機制</strong>，明確標註「模擬交易」警語以符合虛擬實作之法律規範，並體現對用戶個人資料安全防護的嚴謹態度。
                         </li>
                         <li>
-                            <strong>銷售前台：動態互動評論與 UGC 數據時序管理：</strong><br>
+                            <strong>銷售前台——動態互動評論與 UGC 數據時序管理：</strong><br>
                             實作用戶生成內容 (UGC) 模組，透過 <strong>JPA 實體關聯</strong> 標籤 <code>@ManyToOne(fetch = FetchType.LAZY)</code> 建立 <code>Review</code> 與 <code>Book</code>、<code>User</code> 間的高效數據鏈條。<br>
                             除了結合 Spring Security 確保只有登入用戶可發布內容外，更實作了 <strong>時序排序邏輯 (Chronological Ordering)</strong>：確保系統能依據資料庫記錄之精確時間戳 (Timestamp) 自動過濾並呈現「最新評論於首位」。<br>
                             在資料展現層實作了 <strong>數據格式化處理</strong>：資料庫底層採用 <code>@CreationTimestamp</code> 完整紀錄至分秒之精確值，前端則配合 UI 規範優化為僅顯示日期格式，展現兼顧後端數據完整性與前端視覺簡潔性的設計素養。如下截圖所示：<br>
@@ -432,7 +432,7 @@
                         </li>
 
                         <li>
-                            <strong>銷售前台：多維度檢索與支付狀態機閉環：</strong><br>
+                            <strong>銷售前台——多維度檢索與支付狀態機閉環：</strong><br>
                             實作 <strong>14 種學習語系篩選</strong>（下拉式選單）與關鍵字（書名、作者名、國際書號）複合搜尋。針對信用卡與 COD 設計異質 <strong>訂單狀態機 (Order State Machine)</strong>，包含 <code>AWAITING_PAYMENT</code> 原子中間狀態以防止支付漏洞，並應用 <code>@Transactional</code> 達成庫存自動補償。如下截圖所示：<br>
                             <img id="code10" src="螢幕擷取畫面%202026-02-15%20232626.png" alt="書籍列表與篩選" style="width:675px;height:1021px;border-radius:8px; border:10px solid #ccc;">
                             <br>
@@ -447,13 +447,13 @@
                         </li>
 
                         <li>
-                            <strong>管理後台：權限生命週期與資料建模 (Admin Dashboard)：</strong><br>
+                            <strong>管理後台——權限生命週期與資料建模 (Admin Dashboard)：</strong><br>
                             獨立開發會員管理模組，實作基於 <strong>RBAC</strong> 的權限隔離。提供「一鍵啟用/停權」邏輯以調控帳號生命週期，並針對系統迭代實作資料欄位容錯處理，確保在 <strong>Schema Evolution (資料表演進)</strong> 時系統仍能穩定運行。如下截圖所示：<br>
                             <img id="code3" src="會員管理.png" alt="會員管理系統" style="width:616px;height:513px;border-radius:12px; border:10px solid #ccc; margin-top:8px;">
                         </li>
 
                         <li>
-                            <strong>管理後台：全功能書籍 CMS 與多語言數據管理：</strong><br>
+                            <strong>管理後台——全功能書籍 CMS 與多語言數據管理：</strong><br>
                             於後端定義專屬 <strong><code>Language</code> Enum 實體</strong> 封裝 14 種語系與顯示名稱。前端實作互動式彈窗表單、封面預覽與上架狀態動態開關，實現對商品價格、庫存與多語系數據的高效調控。如下截圖所示：<br>
                             <div style="margin-top:8px;">
                                 <img id="code4" src="螢幕擷取畫面%202026-02-15%20221957.png" alt="書籍管理列表" style="width:770px;height:407px;border-radius:8px; border:10px solid #ccc;">
@@ -464,7 +464,7 @@
                         </li>
 
                         <li>
-                            <strong>管理後台：高透明度訂單監控與 Master-Detail 佈局：</strong><br>
+                            <strong>管理後台——高透明度訂單監控與 Master-Detail 佈局：</strong><br>
                             設計訂單營運中心，採 <strong>Master-Detail (主從式資料)</strong> 佈局展示收件地址、費用明細與商品項目。管理員可即時追蹤訂單流轉狀態並手動更新，體現處理複雜 UI 數據同步之能力。如下截圖所示：<br>
                             <img id="code8" src="螢幕擷取畫面%202026-02-15%20222232.png" alt="訂單列表" style="width:620px;height:349px;border-radius:8px; border:10px solid #ccc;">
                             <img id="code9" src="螢幕擷取畫面%202026-02-15%20222313.png" alt="訂單詳情介面" style="width:619px;height:425px;border-radius:8px; border:10px solid #ccc;">
@@ -483,24 +483,24 @@
                     <span style="font-size: 0.9em; font-weight: bold; color: #27ae60; margin-left: 10px;">[外部數據整合與連通]</span>
                     <br>
                     <span class="project-subtitle" style="color: #7f8c8d; font-style: italic;">
-                <strong>技術棧：</strong> Java (Spring Boot 3) / Vue 3 (Composition API, Pinia) / Axios / OpenWeather API / Render / GitHub Pages
+                <strong>技術棧：</strong> Java (Spring Boot 3) / Vue 3 (Composition API, Pinia) / Axios / Weather API / Render / GitHub Pages
             </span>
 
                     <ul style="margin-top: 10px; line-height: 1.6; list-style-type: disc;">
                         <li>
-                            <strong>跨域通訊與部署策略：</strong>
+                            <strong>跨域通訊與部署策略：</strong><br>
                             前端部署於 GitHub Pages、後端部署於 Render，實作動態 Base URL 切換邏輯，並配置 Spring CORS 策略，確保跨域請求安全且可用。
                         </li>
                         <li>
-                            <strong>第三方 RESTful API 整合：</strong>
+                            <strong>第三方 RESTful API 整合：</strong><br>
                             後端串接 <strong>WeatherAPI</strong> 擷取即時氣象資料，並在 Service 層處理異常與 fallback，確保開發與正式環境皆可穩定運作。
                         </li>
                         <li>
-                            <strong>狀態管理與數據持久化 (CRUD)：</strong>
+                            <strong>狀態管理與數據持久化 (CRUD)：</strong><br>
                             利用 <strong>Pinia</strong> 建立響應式狀態中心，協調搜尋結果與歷史紀錄組件間的資料同步。結合 <strong>H2 嵌入式資料庫</strong> 實作搜尋足跡持久化，確保用戶能在應用程式生命週期內追蹤檢索紀錄。
                         </li>
                         <li>
-                            <strong>生產環境靜態部署優化：</strong>
+                            <strong>生產環境靜態部署優化：</strong><br>
                             獨立解決 GitHub Pages 子路徑下的 <strong>Asset 資源路徑偏移問題 (Vite Base Path)</strong>，並撰寫自動化部署腳本提升發布效率，確保 SPA 專案在雲端環境穩定渲染。
                         </li>
                         <li>
