@@ -524,6 +524,21 @@
                             針對歷史紀錄中可能出現的重複檢索數據，實作了基於 <strong>Map 物件的去重演算法 (Deduplication)</strong>。確保 UI 層級僅呈現不重複的最近搜尋城市，並透過自定義排序邏輯解決非同步請求下的 <strong>UI 標籤跳動問題 (Flickering)</strong>，展現對細膩用戶體驗與數據流管理的掌握。
                         </li>
                         <li>
+                            <strong>快取機制與數據持久化衝突診斷 (Cache Side-Effect Mitigation)：</strong><br>
+                            深入診斷並解決 Spring Boot <code>@Cacheable</code> AOP 攔截機制導致 Repository 寫入邏輯失效的問題。透過重新配置業務邏輯與緩存切面，確保在提升查詢效能的同時，依然維持搜尋紀錄的即時持久化（Persistence），展現對框架底層副作用的掌控與複雜數據流一致性的處理能力。
+                        </li>
+                        <li>
+                            <strong>CI/CD 自動化部署與生產環境維護：</strong><br>
+                            實作基於 <strong>GitHub Webhooks 觸發之 Render 自動化部署流程</strong>。確保後端 Java 業務邏輯變更（如持久化邏輯優化）能透過版本控制系統（Git）同步推播至生產環境，並結合遠端伺服器日誌（Logs）進行實時監控與除錯，展現對完整軟體開發生命週期（SDLC）與自動化運維的理解。如下截圖所示：<br>
+                            <img src="render截圖.png" alt="Render 自動化部署日誌" style="width:739px;height:58px;border-radius:8px; border:10px solid #ccc;">
+                        </li>
+                        <li><strong>前端與後端的GitHub Repository網址分別如下：</strong><br>
+                            <ol>
+                                <li><a href="https://github.com/ChrisChou19990904/weather_app_frontend.git" target="_blank">https://github.com/ChrisChou19990904/weather_app_frontend.git</a></li>
+                                <li><a href="https://github.com/ChrisChou19990904/weather_app.git" target="_blank">https://github.com/ChrisChou19990904/weather_app.git</a></li>
+                            </ol>
+                        </li>
+                        <li>
                             <strong>作品Demo影片：</strong><br>
                             <iframe loading="lazy" width="840" height="474" src="https://www.youtube.com/embed/bybPaCKnUAA?si=Q_JAq6rW1aWoTU0g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </li>
