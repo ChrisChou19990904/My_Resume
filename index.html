@@ -668,16 +668,42 @@ Spring Boot x Vue 3 全端開發實踐與底層原理 Wiki（共17個子網頁�
                         </li>
                     </ul>
                 </li>
-                <li> <span class="project-title"><a href="https://chrischou19990904.github.io/harp_app_tutorial_vue3_version" target="_blank">豎琴模擬器《Harp Real》分析與演奏網站</a>（本專案共拆分為 6 個 Vue 元件，包含 3 個頁面層級元件（應用程式使用心得、開發原理分析、演奏精華展示），以及 3 個共用元件，分別負責 Google Translate 語言切換、Footer（作者與版權資訊）、社群分享功能，以實現關注點分離與元件重用。因此共3個子網頁。）</span><br>
-                    <span class="project-subtitle">技術棧： Vue 3 / Vue Router / HTML / CSS / 原生 JavaScript</span>
-                    <ul style="margin-top: 5px; margin-bottom: 5px; list-style-type: disc;">
-                        <li><strong>現代前端框架實踐：</strong><br>將多個原始 HTML 頁面重構成單頁應用程式 (SPA)，實踐 Vue 3 的組件化開發思維，並利用 Vue Router 實現高效的頁面導航。</li>
-                        <li><strong>工程化與外部服務整合：</strong><br>抽象化共享功能（如 Footer、社交分享、Google Translate API 初始化、Facebook SDK 載入）為獨立的 Vue 組件，利用 onMounted 生命週期鉤子確保外部腳本正確且不重複地載入。</li>
-                        <li><strong>內容與技術分析：</strong><br>深入探討數位樂器應用程式的設計原理、音高限制以及實作技術推測，展現跨領域的分析能力。</li>
-                        <li><strong>響應式設計：</strong><br>確保在各種設備上，網站內容和影片都能保持良好的可讀性與佈局。</li>
-                        <li><strong>錨點導航處理：</strong><br>Vue 3 的 SPA 不會像傳統 HTML 那樣在換頁時重新載入整個 DOM，因此原生的 &lt;a href="#section1"&gt;&lt;/a&gt; 不會自動觸發瀏覽器的捲動行為。為了讓頁內導航正常運作，我改用 JavaScript 的 scrollIntoView() 並在路由切換後手動觸發捲動，實作出與傳統錨點相同的效果。透過這點，我進一步理解了 SPA 與傳統多頁網站（MPA）在瀏覽器行為與滾動控制上的本質差異。</li>
-                        <li><strong>Vue SPA 部署：</strong><br>Vue 專案不能像純 HTML 一樣直接上傳，因此我使用 Vite 進行打包並部署至 GitHub Pages。由於靜態主機無法處理 Vue Router 的子路由，我採用 Hash History 避免刷新後出現 404，同時調整 base URL 與資源路徑，使所有頁面與靜態檔案在部署環境中都能正常載入。完成這個過程讓我熟悉了 Vue 的打包流程、Router 的部署差異，以及靜態主機的限制與解法。</li>
-                        <li><strong>Google Translate API 元件提示：</strong><br>由於本網站使用 Vue 3 SPA 架構，頁面切換時不會重新載入整個 DOM，可能導致 Google Translate 選單暫時無法顯示。若遇到此情況，請按 F5、Ctrl+R 或刷新頁面，即可正常顯示語言選單。</li>
+                <li>
+    <span class="project-title">
+        <a href="https://chrischou19990904.github.io/harp_app_tutorial_vue3_version" target="_blank">
+            豎琴模擬器《Harp Real》分析與演奏全方位展示網站
+        </a>
+    </span><br>
+
+                    <span class="project-subtitle">
+        <strong>技術棧：</strong> Vue 3 (Composition API) / Vue Router / Vite / JavaScript / GitHub Pages
+    </span>
+
+                    <ul style="margin-top: 8px; margin-bottom: 8px; list-style-type: disc; line-height: 1.6;">
+                        <li>
+                            <strong>組件化架構與關注點分離：</strong><br>
+                            將專案拆分為 <strong>3 個頁面層級組件</strong>（心得分享、技術分析、演奏展示）與 <strong>3 個高重用性共用組件</strong>（PageWrapper、SocialShare、TheFooter）。透過高階組件（HOC）封裝與 <strong>Vue Slot</strong> 技術實現內容分發，展現模組化開發與代碼重用的實踐能力。
+                        </li>
+
+                        <li>
+                            <strong>跨領域產品技術深度分析：</strong><br>
+                            以開發者視角逆向分析數位樂器 App 互動邏輯，針對「滑奏（Glissando）」與底層音訊處理（推測如 Web AudioContext 或原生 SoundPool）進行原理推測。同時結合鋼琴背景，深入探討 App 在變調操作上的 UX 限制與演奏連續性問題，體現強大的產品分析與問題洞察力。
+                        </li>
+
+                        <li>
+                            <strong>SPA 非同步導航與滾動控制：</strong><br>
+                            封裝 <code>scrollTo</code> 邏輯，結合 <strong>nextTick</strong> 與 <strong>scrollIntoView</strong> 解決單頁應用（SPA）原生錨點定位失效的痛點，並配置 <code>scrollBehavior</code> 確保換頁自動置頂，提供與傳統多頁網站一致且流暢的導航體驗。
+                        </li>
+
+                        <li>
+                            <strong>第三方 SDK 動態整合管理：</strong><br>
+                            在 <code>onMounted</code> 生命週期中精準控管 Facebook SDK 與 Google Translate API 的載入時機。實作腳本重析機制（如 <code>FB.XFBML.parse()</code>）確保社交評論功能在動態路由切換後仍能正確初始化與顯示。
+                        </li>
+
+                        <li>
+                            <strong>自動化建構與靜態環境適配：</strong><br>
+                            配置 Vite 資源路徑並採用 <strong>Hash History 模式</strong>，完美適配 GitHub Pages 靜態空間的限制。整合 <code>gh-pages</code> 建立一鍵自動化部署工作流（CI/CD），解決生產環境資源路徑與 404 問題。
+                        </li>
                     </ul>
                 </li>
                 <li>
