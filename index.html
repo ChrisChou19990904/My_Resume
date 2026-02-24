@@ -204,7 +204,7 @@
 
     <!-- Header -->
     <div class="header-box">
-        <img src="履歷照.jpg" alt="Profile Photo" class="profile-photo" />
+        <img loading="lazy" src="履歷照.jpg" alt="Profile Photo" class="profile-photo" />
         <div class="name-box">
             <h1>周彥廷</h1>
             <p>📧 Email: chou.yenting@gmail.com　|　📱 Phone: 0977-203-867</p>
@@ -309,11 +309,11 @@
     <div class="section" id="certifications">
         <h2>📜 證照 Certifications</h2>
         <ul>
-            <li>TOEIC 740<br><img id="toeic" src="多益成績.png" alt="多益成績"></li>
-            <li>JLPT N3<br><img id="jlpt" src="JLPTN3.png" alt="日檢成績"></li>
-            <li>TQC+ Python<br><img id="Python" src="TQC+Python.png" alt="Python"></li>
-            <li>ITS Java<br><img id="ITS_Java" src="ITS_Java.png" alt="Java"></li>
-            <li>恆逸結業證書<br><img id="heng_yi" src="恆逸結業證書.png" alt="恆逸結業證書"></li>
+            <li>TOEIC 740<br><img loading="lazy" id="toeic" src="多益成績.png" alt="多益成績"></li>
+            <li>JLPT N3<br><img loading="lazy" id="jlpt" src="JLPTN3.png" alt="日檢成績"></li>
+            <li>TQC+ Python<br><img loading="lazy" id="Python" src="TQC+Python.png" alt="Python"></li>
+            <li>ITS Java<br><img loading="lazy" id="ITS_Java" src="ITS_Java.png" alt="Java"></li>
+            <li>恆逸結業證書<br><img loading="lazy" id="heng_yi" src="恆逸結業證書.png" alt="恆逸結業證書"></li>
         </ul>
     </div>
     <div class="section" id="language">
@@ -328,19 +328,19 @@
     </div>
     <div class="section" id="certificate">
         <h2>📜 大學畢業證書 Bachelor's Degree Certificate</h2>
-        <img id="certificate1" src="大學畢業證書.jpg" alt="大學畢業證書" style="width:360px; border-radius:12px; border:3px solid #ccc; margin-top:8px;">
+        <img loading="lazy" id="certificate1" src="大學畢業證書.jpg" alt="大學畢業證書" style="width:360px; border-radius:12px; border:3px solid #ccc; margin-top:8px;">
         <br>
-        <img id="certificate2" src="學程學分證書.jpg" alt="學程學分證書" style="width:360px; border-radius:12px; border:3px solid #ccc; margin-top:8px;">
+        <img loading="lazy" id="certificate2" src="學程學分證書.jpg" alt="學程學分證書" style="width:360px; border-radius:12px; border:3px solid #ccc; margin-top:8px;">
         <br>
-        <img id="certificate3" src="學程學分證書2.jpg" alt="學程學分證書2" style="width:360px; border-radius:12px; border:3px solid #ccc; margin-top:8px;">
+        <img loading="lazy" id="certificate3" src="學程學分證書2.jpg" alt="學程學分證書2" style="width:360px; border-radius:12px; border:3px solid #ccc; margin-top:8px;">
     </div>
     <div class="section" id="car-license">
         <h2>汽車駕照（自排） Car Driving License (Automatic Transmission)</h2>
-        <img id="certificate4" src="汽車駕照.jpg" alt="汽車駕照" style="width:360px; border-radius:12px; border:3px solid #ccc; margin-top:8px;">
+        <img loading="lazy" id="certificate4" src="汽車駕照.jpg" alt="汽車駕照" style="width:360px; border-radius:12px; border:3px solid #ccc; margin-top:8px;">
     </div>
     <div class="section" id="motor-license">
         <h2>普通重型機車駕照 Motorcycle License (Standard Heavy)</h2>
-        <img id="certificate5" src="機車駕照.jpg" alt="普通重型機車駕照" style="width:360px; border-radius:12px; border:3px solid #ccc; margin-top:8px;">
+        <img loading="lazy" id="certificate5" src="機車駕照.jpg" alt="普通重型機車駕照" style="width:360px; border-radius:12px; border:3px solid #ccc; margin-top:8px;">
     </div>
 
     <!-- Skills -->
@@ -433,52 +433,52 @@
                             實作用戶生成內容 (UGC) 模組，透過 <strong>JPA 實體關聯</strong> 標籤 <code>@ManyToOne(fetch = FetchType.LAZY)</code> 建立 <code>Review</code> 與 <code>Book</code>、<code>User</code> 間的高效數據鏈條。<br>
                             除了結合 Spring Security 確保只有登入用戶可發布內容外，更實作了 <strong>時序排序邏輯 (Chronological Ordering)</strong>：確保系統能依據資料庫記錄之精確時間戳 (Timestamp) 自動過濾並呈現「最新評論於首位」。<br>
                             在資料展現層實作了 <strong>數據格式化處理</strong>：資料庫底層採用 <code>@CreationTimestamp</code> 完整紀錄至分秒之精確值，前端則配合 UI 規範優化為僅顯示日期格式，展現兼顧後端數據完整性與前端視覺簡潔性的設計素養。如下截圖所示：<br>
-                            <img src="螢幕擷取畫面%202026-02-18%20230928.png" alt="後端程式碼截圖" style="width:648px;height:486px;border-radius:12px; border:12px solid #ccc; margin-top:8px;">
+                            <img loading="lazy" src="螢幕擷取畫面%202026-02-18%20230928.png" alt="後端程式碼截圖" style="width:648px;height:486px;border-radius:12px; border:12px solid #ccc; margin-top:8px;">
                             <br>
-                            <img id="code1" src="螢幕擷取畫面%202026-02-15%20225532.png" alt="書籍詳情與評論" style="width:523px;height:506px;border-radius:12px; border:10px solid #ccc; margin-top:8px;">
+                            <img loading="lazy" id="code1" src="螢幕擷取畫面%202026-02-15%20225532.png" alt="書籍詳情與評論" style="width:523px;height:506px;border-radius:12px; border:10px solid #ccc; margin-top:8px;">
                             <br>
-                            <img id="code2" src="螢幕擷取畫面%202026-02-15%20225406.png" alt="讀者評論列表" style="width:634px;height:313px;border-radius:12px; border:10px solid #ccc; margin-top:8px;">
+                            <img loading="lazy" id="code2" src="螢幕擷取畫面%202026-02-15%20225406.png" alt="讀者評論列表" style="width:634px;height:313px;border-radius:12px; border:10px solid #ccc; margin-top:8px;">
                             <br>
-                            <img src="螢幕擷取畫面%202026-02-18%20230225.png" alt="資料庫截圖" style="width:761px;height:301px;border-radius:12px; border:10px solid #ccc; margin-top:8px;">
+                            <img loading="lazy" src="螢幕擷取畫面%202026-02-18%20230225.png" alt="資料庫截圖" style="width:761px;height:301px;border-radius:12px; border:10px solid #ccc; margin-top:8px;">
                         </li>
 
                         <li>
                             <strong>銷售前台——多維度檢索與支付狀態機閉環：</strong><br>
                             實作 <strong>14 種學習語系篩選</strong>（下拉式選單）與關鍵字（書名、作者名、國際書號）複合搜尋。針對信用卡與 COD 設計異質 <strong>訂單狀態機 (Order State Machine)</strong>，包含 <code>AWAITING_PAYMENT</code> 原子中間狀態以防止支付漏洞，並應用 <code>@Transactional</code> 達成庫存自動補償。如下截圖所示：<br>
-                            <img id="code10" src="螢幕擷取畫面%202026-02-15%20232626.png" alt="書籍列表與篩選" style="width:675px;height:1021px;border-radius:8px; border:10px solid #ccc;">
+                            <img loading="lazy" id="code10" src="螢幕擷取畫面%202026-02-15%20232626.png" alt="書籍列表與篩選" style="width:675px;height:1021px;border-radius:8px; border:10px solid #ccc;">
                             <br>
-                            <img id="code11" src="螢幕擷取畫面%202026-02-15%20232641.png" alt="書籍列表與篩選" style="width:670px;height:914px;border-radius:8px; border:10px solid #ccc;">
+                            <img loading="lazy" id="code11" src="螢幕擷取畫面%202026-02-15%20232641.png" alt="書籍列表與篩選" style="width:670px;height:914px;border-radius:8px; border:10px solid #ccc;">
                             <br>
-                            <img id="code12" src="螢幕擷取畫面%202026-02-15%20232717.png" alt="書籍列表與篩選" style="width:682px;height:891px;border-radius:8px; border:10px solid #ccc;">
+                            <img loading="lazy" id="code12" src="螢幕擷取畫面%202026-02-15%20232717.png" alt="書籍列表與篩選" style="width:682px;height:891px;border-radius:8px; border:10px solid #ccc;">
                             <br>
-                            <img id="code13" src="螢幕擷取畫面%202026-02-15%20232755.png" alt="書籍列表與篩選" style="width:671px;height:888px;border-radius:8px; border:10px solid #ccc;">
+                            <img loading="lazy" id="code13" src="螢幕擷取畫面%202026-02-15%20232755.png" alt="書籍列表與篩選" style="width:671px;height:888px;border-radius:8px; border:10px solid #ccc;">
                             <br>
-                            <img id="code14" src="螢幕擷取畫面%202026-02-15%20224306.png" alt="書籍列表與篩選" style="width:738px;height:470px;border-radius:8px; border:10px solid #ccc;">
+                            <img loading="lazy" id="code14" src="螢幕擷取畫面%202026-02-15%20224306.png" alt="書籍列表與篩選" style="width:738px;height:470px;border-radius:8px; border:10px solid #ccc;">
                             <br>
                         </li>
 
                         <li>
                             <strong>管理後台——權限生命週期與資料建模 (Admin Dashboard)：</strong><br>
                             獨立開發會員管理模組，實作基於 <strong>RBAC</strong> 的權限隔離。提供「一鍵啟用/停權」邏輯以調控帳號生命週期，並針對系統迭代實作資料欄位容錯處理，確保在 <strong>Schema Evolution (資料表演進)</strong> 時系統仍能穩定運行。如下截圖所示：<br>
-                            <img id="code3" src="會員管理.png" alt="會員管理系統" style="width:616px;height:513px;border-radius:12px; border:10px solid #ccc; margin-top:8px;">
+                            <img loading="lazy" id="code3" src="會員管理.png" alt="會員管理系統" style="width:616px;height:513px;border-radius:12px; border:10px solid #ccc; margin-top:8px;">
                         </li>
 
                         <li>
                             <strong>管理後台——全功能書籍 CMS 與多語言數據管理：</strong><br>
                             於後端定義專屬 <strong><code>Language</code> Enum 實體</strong> 封裝 14 種語系與顯示名稱。前端實作互動式彈窗表單、封面預覽與上架狀態動態開關，實現對商品價格、庫存與多語系數據的高效調控。如下截圖所示：<br>
                             <div style="margin-top:8px;">
-                                <img id="code4" src="螢幕擷取畫面%202026-02-15%20221957.png" alt="書籍管理列表" style="width:770px;height:407px;border-radius:8px; border:10px solid #ccc;">
-                                <img id="code5" src="螢幕擷取畫面%202026-02-15%20222011.png" alt="新增書籍表單" style="width:583px;height:512px;border-radius:8px; border:10px solid #ccc;">
-                                <img id="code6" src="螢幕擷取畫面%202026-02-15%20222022.png" alt="新增書籍表單" style="width:604px;height:508px;border-radius:8px; border:10px solid #ccc;">
+                                <img loading="lazy" id="code4" src="螢幕擷取畫面%202026-02-15%20221957.png" alt="書籍管理列表" style="width:770px;height:407px;border-radius:8px; border:10px solid #ccc;">
+                                <img loading="lazy" id="code5" src="螢幕擷取畫面%202026-02-15%20222011.png" alt="新增書籍表單" style="width:583px;height:512px;border-radius:8px; border:10px solid #ccc;">
+                                <img loading="lazy" id="code6" src="螢幕擷取畫面%202026-02-15%20222022.png" alt="新增書籍表單" style="width:604px;height:508px;border-radius:8px; border:10px solid #ccc;">
                             </div>
-                            <img id="code7" src="螢幕擷取畫面%202026-02-15%20222809.png" alt="後端 Enum 代碼" style="width:553px;height:372px;border-radius:12px; border:10px solid #ccc; margin-top:8px;">
+                            <img loading="lazy" id="code7" src="螢幕擷取畫面%202026-02-15%20222809.png" alt="後端 Enum 代碼" style="width:553px;height:372px;border-radius:12px; border:10px solid #ccc; margin-top:8px;">
                         </li>
 
                         <li>
                             <strong>管理後台——高透明度訂單監控與 Master-Detail 佈局：</strong><br>
                             設計訂單營運中心，採 <strong>Master-Detail (主從式資料)</strong> 佈局展示收件地址、費用明細與商品項目。管理員可即時追蹤訂單流轉狀態並手動更新，體現處理複雜 UI 數據同步之能力。如下截圖所示：<br>
-                            <img id="code8" src="螢幕擷取畫面%202026-02-15%20222232.png" alt="訂單列表" style="width:620px;height:349px;border-radius:8px; border:10px solid #ccc;">
-                            <img id="code9" src="螢幕擷取畫面%202026-02-15%20222313.png" alt="訂單詳情介面" style="width:619px;height:425px;border-radius:8px; border:10px solid #ccc;">
+                            <img loading="lazy" id="code8" src="螢幕擷取畫面%202026-02-15%20222232.png" alt="訂單列表" style="width:620px;height:349px;border-radius:8px; border:10px solid #ccc;">
+                            <img loading="lazy" id="code9" src="螢幕擷取畫面%202026-02-15%20222313.png" alt="訂單詳情介面" style="width:619px;height:425px;border-radius:8px; border:10px solid #ccc;">
                         </li>
 
                         <li>
@@ -541,7 +541,7 @@
                         <li>
                             <strong>CI/CD 自動化部署與生產環境維護：</strong><br>
                             實作基於 <strong>GitHub Webhooks 觸發之 Render 自動化部署流程</strong>。確保後端 Java 業務邏輯變更（如持久化邏輯優化）能透過版本控制系統（Git）同步推播至生產環境，並結合遠端伺服器日誌（Logs）進行實時監控與除錯，展現對完整軟體開發生命週期（SDLC）與自動化運維的理解。如下截圖所示：<br>
-                            <img src="render截圖.png" alt="Render 自動化部署日誌" style="width:739px;height:58px;border-radius:8px; border:10px solid #ccc;">
+                            <img loading="lazy" src="render截圖.png" alt="Render 自動化部署日誌" style="width:739px;height:58px;border-radius:8px; border:10px solid #ccc;">
                         </li>
                         <li><strong>前端與後端的GitHub Repository網址分別如下：</strong><br>
                             <ol>
@@ -766,8 +766,8 @@ Spring Boot x Vue 3 全端開發實踐與底層原理 Wiki（共17個子網頁�
                         <li>
                             <strong>跨語系編碼驗證與存取控制 (Access Control)：</strong><br>
                             實作具備驗證邏輯的隱藏內容區塊。特選包含德文特殊字母（ß、ü、ö、ä）之長句作為驗證短語，確保前端邏輯對 <strong>UTF-8 擴充字元集</strong> 的解析相容性，展現對資料隱私管理與技術細節的嚴謹要求。如下截圖所示：<br>
-                            <img src="密碼輸入.jpg" alt="密碼輸入" style="width:606px;height:110px;border:10px solid red"><br>
-                            <img src="輸入密碼.jpg" alt="密碼輸入" style="width:768px;height:228px;border:10px solid red">
+                            <img loading="lazy" src="密碼輸入.jpg" alt="密碼輸入" style="width:606px;height:110px;border:10px solid red"><br>
+                            <img loading="lazy" src="輸入密碼.jpg" alt="密碼輸入" style="width:768px;height:228px;border:10px solid red">
                         </li>
                         <li>
                             <strong>創作者宣言與系統設計哲學：</strong><br>
