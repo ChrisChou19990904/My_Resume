@@ -671,6 +671,10 @@ Spring Boot x Vue 3 全端開發實踐與底層原理 Wiki（共17個子網頁�
                             實作基於 <code>Midi.js</code> 與 <code>Tone.js</code> 的解析播放系統。開發即時移調演算法（<code>note.midi + transpose</code>），並針對 Web 環境下的非同步競爭問題，實作 <strong>時間偏移補償（Time Offset Compensation）</strong>，解決首音缺失問題並確保 100% 播放還原度。
                         </li>
 
+                        <li><strong>異步數據流與狀態管理優化：</strong><br>
+                            針對多媒體 App 在連續上傳場景下的數據覆蓋衝突進行優化。實作狀態重置機制 (State Reset) 與基於 Tone.now() 的動態排程校準，解決 Web Audio Context 時間軸不一致導致的播放失效問題。
+                        </li>
+
                         <li>
                             <strong>個人演奏實證與高品質數據採集：</strong><br>
                             強調演奏能力為數位創作之靈魂。專案作品均採集自個人透過 <strong>Perfect Piano 錄製模式</strong> 手動彈奏之數據，證明具備操作樂器以獲取精確 MIDI 序列（包含 Time Offset 與力度細節）的專業 Domain Knowledge。
