@@ -632,7 +632,7 @@ Spring Boot x Vue 3 全端開發實踐與底層原理 Wiki（共17個子網頁�
                 <li>
     <span class="project-title">
         <a href="https://chrischou19990904.github.io/Marimba_App_Introduction" target="_blank">
-            數位音樂系統分析與 Web 實務應用（共16個子網頁）
+            數位音樂系統分析與 Web 實務應用（共17個子網頁）
         </a>
     </span><br>
 
@@ -676,6 +676,20 @@ Spring Boot x Vue 3 全端開發實踐與底層原理 Wiki（共17個子網頁�
                         <li>
                             <strong>數位真實性驗證機制設計：</strong><br>
                             結合技術手段（如 MIDI 時間軸連續性分析）與物理證明（如螢幕錄影觸發連續動作），建立一套「演奏來源證明（Provenance）」驗證流程，探討 AI 時代如何確保數位影音內容的真實來源與不可竄改性。
+                        </li>
+                        <li>
+                            <strong>Web MIDI 動態移調演算法與二進位數據處理：</strong><br>
+                            實作基於 <code>Midi.js</code> 的解析系統，透過 <code>ArrayBuffer</code> 與 <code>fetch</code> API 處理本地及遠端 <code>.mid</code> 檔案。開發即時移調演算法，藉由運算 <code>note.midi + transpose</code> 達成跨音域播放，展現數位音樂協議的數據操作力。
+                        </li>
+
+                        <li>
+                            <strong>個人演奏實證與高品質數據採集：</strong><br>
+                            強調演奏能力為數位創作之靈魂。專案內建作品均採集自個人透過 <strong>Perfect Piano 錄製模式</strong> 手動彈奏之數據，藉此證明具備操作樂器以獲取精確 MIDI 序列（包含 Time Offset 與 Duration）的專業能力。
+                        </li>
+
+                        <li>
+                            <strong>前端依賴管理與系統除錯經驗：</strong><br>
+                            分析並解決 Web 環境下 <code>ReferenceError</code> 與 CDN 版本不匹配之異常。實作前端依賴檢查機制，針對 <code>file://</code> 與 <code>http://</code> 協議下的安全沙盒限制進行調試，確保多媒體資源載入的穩定性。
                         </li>
                     </ul>
                 </li>
