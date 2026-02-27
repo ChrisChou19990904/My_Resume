@@ -544,6 +544,10 @@
                             實作基於 <strong>GitHub Webhooks 觸發之 Render 自動化部署流程</strong>。確保後端 Java 業務邏輯變更（如持久化邏輯優化）能透過版本控制系統（Git）同步推播至生產環境，並結合遠端伺服器日誌（Logs）進行實時監控與除錯，展現對完整軟體開發生命週期（SDLC）與自動化運維的理解。如下截圖所示：<br>
                             <img loading="lazy" src="render截圖.png" alt="Render 自動化部署日誌" style="width:739px;height:58px;border-radius:8px; border:10px solid #ccc;">
                         </li>
+                        <li>
+                            <strong>全局共享持久層與數據一致性實踐：</strong><br>
+                            利用 <strong>H2 記憶體資料庫</strong> 實作全局搜尋紀錄儲存，模擬分散式架構下多終端存取單一持久層的行為。藉此觀察到「跨裝置紀錄同步」之現象，並深入探討 <strong>Multi-tenancy (多租戶隔離)</strong> 與伺服器端狀態管理的取捨。
+                        </li>
                         <li><strong>前端與後端的GitHub Repository網址分別如下：</strong><br>
                             <ol>
                                 <li><a href="https://github.com/ChrisChou19990904/weather_app_frontend.git" target="_blank">https://github.com/ChrisChou19990904/weather_app_frontend.git</a></li>
