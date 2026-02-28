@@ -433,7 +433,7 @@
                             <strong>銷售前台——動態互動評論與 UGC 數據時序管理：</strong><br>
                             實作用戶生成內容 (UGC) 模組，透過 <strong>JPA 實體關聯</strong> 標籤 <code>@ManyToOne(fetch = FetchType.LAZY)</code> 建立 <code>Review</code> 與 <code>Book</code>、<code>User</code> 間的高效數據鏈條。<br>
                             除了結合 Spring Security 確保只有登入用戶可發布內容外，更實作了 <strong>時序排序邏輯 (Chronological Ordering)</strong>：確保系統能依據資料庫記錄之精確時間戳 (Timestamp) 自動過濾並呈現「最新評論於首位」。<br>
-                            在資料展現層實作了 <strong>數據格式化處理</strong>：資料庫底層採用 <code>@CreationTimestamp</code> 完整紀錄至分秒之精確值，前端則配合 UI 規範優化為僅顯示日期格式，展現兼顧後端數據完整性與前端視覺簡潔性的設計素養。另外，雖然目前評論區採用純文字渲染以模擬社群平台（如 IG、TikTok）的防詐騙與流量保護機制，但未來可規劃 『白名單網址解析』 功能，僅允許內部書籍連結或特定受信任域名自動轉化為可點擊連結，平衡開發靈活性與安全性。如下截圖所示：<br>
+                            在資料展現層實作了 <strong>數據格式化處理</strong>：資料庫底層採用 <code>@CreationTimestamp</code> 完整紀錄至分秒之精確值，前端則配合 UI 規範優化為僅顯示日期格式，展現兼顧後端數據完整性與前端視覺簡潔性的設計素養。<br>另外，雖然目前評論區採用純文字渲染以模擬社群平台（如 IG、TikTok）的防詐騙與流量保護機制，但未來可規劃 『白名單網址解析』 功能，僅允許內部書籍連結或特定受信任域名自動轉化為可點擊連結，平衡開發靈活性與安全性。<br>以上描述如下截圖所示：<br>
                             <img loading="lazy" src="螢幕擷取畫面%202026-02-18%20230928.png" alt="後端程式碼截圖" style="width:648px;height:486px;border-radius:12px; border:12px solid #ccc; margin-top:8px;">
                             <br>
                             <img loading="lazy" id="code1" src="螢幕擷取畫面%202026-02-15%20225532.png" alt="書籍詳情與評論" style="width:523px;height:506px;border-radius:12px; border:10px solid #ccc; margin-top:8px;">
