@@ -449,7 +449,7 @@
 
                         <li>
                             <strong>銷售前台——多維度檢索與支付狀態機閉環：</strong><br>
-                            實作 <strong>14 種學習語系篩選</strong>（下拉式選單）與關鍵字（書名、作者名、國際書號）複合搜尋。針對信用卡與 COD 設計異質 <strong>訂單狀態機 (Order State Machine)</strong>，包含 <code>AWAITING_PAYMENT</code> 原子中間狀態以防止支付漏洞，並應用 <code>@Transactional</code> 達成庫存自動補償。如下截圖所示：<br>
+                            實作 <strong>14 種學習語系篩選</strong>（下拉式選單）與關鍵字（書名、作者名、國際書號）複合搜尋。針對信用卡與 COD 設計異質 <strong>訂單狀態機 (Order State Machine)</strong>，包含 <code>AWAITING_PAYMENT</code> 原子中間狀態以防止支付漏洞，並應用 <code>@Transactional</code> 達成庫存自動補償。如下截圖所示（@Transactional的部分請參見<a href="https://github.com/ChrisChou19990904/Foreign_Languages_Book_Back_End/blob/master/src/main/java/org/example/service/OrderService.java" target="_blank">OrderService.java</a>）：<br>
                             <img loading="lazy" id="code10" src="螢幕擷取畫面%202026-02-15%20232626.png" alt="書籍列表與篩選" style="width:675px;height:1021px;border-radius:8px; border:10px solid #ccc;">
                             <br>
                             <img loading="lazy" id="code11" src="螢幕擷取畫面%202026-02-15%20232641.png" alt="書籍列表與篩選" style="width:670px;height:914px;border-radius:8px; border:10px solid #ccc;">
@@ -459,7 +459,6 @@
                             <img loading="lazy" id="code13" src="螢幕擷取畫面%202026-02-15%20232755.png" alt="書籍列表與篩選" style="width:671px;height:888px;border-radius:8px; border:10px solid #ccc;">
                             <br>
                             <img loading="lazy" id="code14" src="螢幕擷取畫面%202026-02-15%20224306.png" alt="書籍列表與篩選" style="width:738px;height:470px;border-radius:8px; border:10px solid #ccc;">
-                            <br>
                         </li>
 
                         <li>
