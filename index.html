@@ -467,7 +467,15 @@
                             <br>
                             <img loading="lazy" id="code14" src="螢幕擷取畫面%202026-02-15%20224306.png" alt="書籍列表與篩選" style="width:738px;height:470px;border-radius:8px; border:10px solid #ccc;">
                         </li>
-
+                        <li>
+                            <strong>用戶端——全週期訂單紀錄與狀態追蹤 (Order History & Lifecycle)：</strong><br>
+                            實作用戶端「我的訂單」頁面，透過 <strong>JPQL 關聯查詢</strong> 並配合 <code>OrderByCreatedAtDesc</code> 讓用戶能即時回溯過往交易紀錄。<br>
+                            除了結合訂單狀態機展示 <code>AWAITING_PAYMENT</code> 至 <code>COMPLETED</code> 的動態生命週期外，更在用戶端同樣採用 <strong>Master-Detail (主從式資料) 佈局</strong> ：用戶可展開查看包含書籍名稱、單價與收件地址的詳盡明細，確保前後端數據流（Data Flow）的高度一致性。<br>
+                            在安全性層面，於 Service 層執行嚴格的 <strong>「身分歸屬權檢查」</strong>，確保用戶僅能透過其專屬之 JWT 憑證獲取自身訂單數據，有效防止越權存取（IDOR）風險。如下截圖所示：<br>
+                            <img loading="lazy" src="螢幕擷取畫面 2026-05-07 231003.png" alt="用戶訂單列表" style="width:553px;height:456px;border-radius:12px; border:10px solid #ccc; margin-top:8px;">
+                            <br>
+                            <img loading="lazy" src="螢幕擷取畫面 2026-05-07 231019.png" alt="用戶訂單詳情明細" style="width:580px;height:422px;border-radius:12px; border:10px solid #ccc; margin-top:8px;">
+                        </li>
                         <li>
                             <strong>管理後台——權限生命週期與資料建模 (Admin Dashboard)：</strong><br>
                             獨立開發會員管理模組，實作基於 <strong>RBAC</strong> 的權限隔離。提供「一鍵啟用/停權」邏輯以調控帳號生命週期，並針對系統迭代實作資料欄位容錯處理，確保在 <strong>Schema Evolution (資料表演進)</strong> 時系統仍能穩定運行。如下截圖所示：<br>
