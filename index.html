@@ -570,6 +570,25 @@
                             <strong>跨端分享行為之環境感知 (Environment Awareness)：</strong><br>
                             深入分析 <strong>Web Share API</strong> 在行動端原生系統與 PC 端瀏覽器間的行為差異。針對社群平台（如 Facebook, Line）網頁版 API 的參數傳遞限制，於 UI 層實作技術揭露說明，展現對跨平台整合限制的理解與產品透明度。
                         </li>
+                        <li>
+                            <strong>響應式視圖與互動邏輯優化 (User Interaction & Logic Flow)：</strong><br>
+                            靈活運用 <code>v-model</code> 實作視圖與狀態的雙向資料同步，並結合 <code>@keyup.enter</code> 鍵盤修飾符與 <code>:disabled</code> 動態屬性綁定。實作非同步請求狀態下的「前端防呆機制」，有效防止重複點擊導致的併發請求，確保系統通訊之原子性與穩定。
+                        </li>
+
+                        <li>
+                            <strong>高效能條件渲染與 DOM 管理策略 (Rendering Optimization)：</strong><br>
+                            辨析並實踐 <code>v-if</code>（DOM 銷毀與重建）與 <code>v-show</code>（CSS Display 切換）之差異。在初始載入時利用 <code>v-if</code> 延遲渲染（Lazy Rendering）天氣卡片與歷史清單，優化首屏加載效能（First Meaningful Paint），減少不必要的 DOM 負擔。
+                        </li>
+
+                        <li>
+                            <strong>動態列表渲染與 Virtual DOM 效能實踐 (List Rendering & Diffing)：</strong><br>
+                            利用 <code>v-for</code> 搭配具備唯一性的 <code>:key</code> 屬性（選用資料庫 ID），將搜尋歷史高效渲染為互動式標籤（History Tags）。透過優化 Key 值選取提升 Vue 內部 Diff 演算法之效率，並結合 Pinia 狀態管理達成歷史紀錄與即時查詢間的無縫數據一致性。
+                        </li>
+
+                        <li>
+                            <strong>組件生命週期應用與資源回收 (Component Lifecycle & Resource Cleanup)：</strong><br>
+                            深入運用 <code>onMounted</code> 生命週期鉤子進行初始數據檢索，並在組件切換過程中利用 <code>v-if</code> 之卸載（Unmount）特性，自動終止多媒體資源播放與非同步連線，展現對瀏覽器資源生命週期管理與記憶體優化的掌握。
+                        </li>
                         <li><strong>前端與後端的GitHub Repository網址分別如下：</strong><br>
                             <ol>
                                 <li><a href="https://github.com/ChrisChou19990904/weather_app_frontend.git" target="_blank">https://github.com/ChrisChou19990904/weather_app_frontend.git</a></li>
