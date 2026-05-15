@@ -468,6 +468,22 @@
                             <img loading="lazy" id="code14" src="螢幕擷取畫面%202026-02-15%20224306.png" alt="書籍列表與篩選" style="width:738px;height:470px;border-radius:8px; border:10px solid #ccc;">
                         </li>
                         <li>
+                            <strong>用戶端——條件式表單驗證與異質支付邏輯：</strong><br>
+                            針對不同支付途徑實作<strong>動態欄位驗證 (Conditional Validation)</strong>，確保結帳數據的完整性：<br>
+                            1. <strong>信用卡支付</strong>：強制驗證「收件人姓名」與「完整收件地址」，作為後端金流合規性之必要參數。<br>
+                            2. <strong>貨到付款 (COD)</strong>：動態切換驗證權重，強制要求「聯絡電話」與「收件地址」，以支撐物流配送之通訊鏈條。<br>
+                            前端透過 Vue 3 響應式狀態實作 <strong>防錯機制 (Poka-yoke)</strong>，在觸發 API 請求前攔截無效數據，並配合後端 <code>@Transactional</code> 事務保護，確保異質支付流程下的數據一致性。如下截圖所示：<br>
+                            <div style="margin-top:8px;">
+                                <img loading="lazy" src="支付方式1.jpg" alt="信用卡支付驗證" style="width:554px;height:738px;border-radius:8px; border:10px solid #ccc; margin-right:5px;">
+                                <br>
+                                <img loading="lazy" src="支付方式2.jpg" alt="信用卡支付驗證" style="width:554px;height:738px;border-radius:8px; border:10px solid #ccc; margin-right:5px;">
+                                <br>
+                                <img loading="lazy" src="支付方式3.jpg" alt="貨到付款驗證" style="width:554px;height:738px;border-radius:8px; border:10px solid #ccc; margin-right:5px;">
+                                <br>
+                                <img loading="lazy" src="支付方式4.jpg" alt="貨到付款驗證" style="width:554px;height:738px;border-radius:8px; border:10px solid #ccc; margin-right:5px;">
+                            </div>
+                        </li>
+                        <li>
                             <strong>用戶端——全週期訂單紀錄與狀態追蹤 (Order History & Lifecycle)：</strong><br>
                             實作用戶端「我的訂單」頁面，透過 <strong>JPQL 關聯查詢</strong> 並配合 <code>OrderByCreatedAtDesc</code> 讓用戶能即時回溯過往交易紀錄。<br>
                             除了結合訂單狀態機展示 <code>AWAITING_PAYMENT</code> 至 <code>COMPLETED</code> 的動態生命週期外，更在用戶端同樣採用 <strong>Master-Detail (主從式資料) 佈局</strong> ：用戶可展開查看包含書籍名稱、單價與收件地址的詳盡明細，確保前後端數據流（Data Flow）的高度一致性。<br>
