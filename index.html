@@ -688,72 +688,42 @@
                 <li>
     <span class="project-title">
         <a href="https://chrischou19990904.github.io/Marimba_App_Introduction" target="_blank">
-            數位音樂系統分析與 Web 實務應用（共17個子網頁）
+            數位音樂系統分析與 Web 互動音訊架構實踐（含 17 篇技術專題與互動工具）
         </a>
     </span><br>
-
                     <span class="project-subtitle">
-        技術棧： HTML5 / CSS3 / 原生 JavaScript / PWA (Service Workers) / Web Audio API / MIDI.js
+        技術棧：HTML5 / CSS3 / 原生 JavaScript / Web Audio API / Tone.js / @tonejs/midi / Canvas 2D / PWA (Service Workers)
     </span><br>
 
                     <ul style="margin-top: 5px; margin-bottom: 5px; list-style-type: disc;">
                         <li>
-                            <strong>多媒體資源生命週期與框架渲染機制研究：</strong><br>
-                            深度對比原生 DOM 操作與 Vue 3 <strong>Unmount 銷毀機制</strong>。針對原生開發中僅以 CSS 隱藏元素導致影音背景播放與資源佔用的痛點，分析 DOM 節點移除對硬體資源回收的影響，並實作手動資源管理邏輯以優化瀏覽器效能。
+                            <strong>前端物理聲學合成與即時轉調演算法：</strong><br>
+                            基於 Web Audio API 與 Tone.js 構建多波形訊號產生器（三角波/鋸齒波/方波/正弦波），分析諧波結構對音色的影響。設計 ADSR 動態包絡線（Envelope）以模擬擊弦與餘音物理衰減，克服傳統合成器生硬感；開發基於整數 MIDI Number 的即時轉調演算法，並針對 Web 音訊時間軸實作<strong>時間偏移補償（Time Offset Compensation）</strong>，確保音符無延遲精準觸發。
                         </li>
 
                         <li>
-                            <strong>系統級音訊行為診斷與 HCI 互動分析：</strong><br>
-                            探討 iOS <code>AVAudioSession</code> 與 Android <code>AudioManager</code> 的音訊通道設定。解構為何 Perfect Piano 能避開系統靜音模式，並針對數位樂器「視聽不連貫」現象提出人機互動（HCI）視覺回饋優化方案。
+                            <strong>實時聲波視覺化與傅立葉頻譜分析（Oscilloscope & FFT）：</strong><br>
+                            利用 <code>Tone.Waveform</code> 與 <code>Tone.FFT</code> 節點搭建音訊管線（Audio Graph）。透過 HTML5 Canvas 與 <code>requestAnimationFrame</code> 實現雙視覺化模組：即時繪製時域振幅振動波形，並以快速傅立葉變換（FFT）將頻率訊號線性歸一化，渲染多頻段跳動的 Audio Spectrum 柱狀圖，直觀呈現音色諧波與能量分佈。
                         </li>
 
                         <li>
-                            <strong>前端音訊特徵合成與聲學物理動態模擬：</strong><br>
-                            基於 Web Audio API 與 Tone.js 實現多模式訊號產生器（Oscillator），分析不同幾何波形（三角波、鋸齒波、方波）的諧波結構（Harmonic Structure）對聽覺認知的影響。實作動態音色切換架構，透過在前端動態注入包絡線參數（ADSR Envelope），精準控制音訊觸發時的爆發力（Attack）與釋放（Release）物理波形，克服傳統 Web 合成器音色生硬與 8-bit 紅白機方波感痛點。並深度分析行動作業系統（iOS/Android）在「環境音效（Ambient）」類別下的硬體層級音訊攔截機制，提供完整的跨平台相容性解決方案。
+                            <strong>Tone.Transport 時間軸主控與非阻塞式播放排程：</strong><br>
+                            重構音訊事件架構，將 MIDI 序列封裝為 <code>Tone.Part</code>，並掛載至 <code>Tone.Transport</code> 全域主控時鐘。實作具備微秒級對齊的<strong>播放、無損暫停、平滑釋放（ReleaseAll）與進度條任意跳轉（Seek）</strong>功能，徹底解決傳統直接排程導致的記憶體洩漏與多曲疊音問題。
                         </li>
 
                         <li>
-                            <strong>MIDI 通訊協議與數據流整合：</strong><br>
-                            解構 MIDI 十六進位數據結構（如 <code>0x90</code> Note On）。實作跨軟體工作流：將原始演奏數據轉譯為 <strong>MuseScore</strong> 數位樂譜與 <strong>Marble Music</strong> 動畫，達成聽覺與視覺的數據同步驗證。
+                            <strong>系統級音訊架構診斷與行動端 Audio Session 攔截解析：</strong><br>
+                            深度探討行動裝置（iOS WebKit / Android）底層音訊通道設計。分析網頁即時合成音訊被歸類為 <code>Ambient</code> 類別而在實體靜音鍵下遭硬體攔截的成因，對比原生 App（如 Perfect Piano）透過 <code>AVAudioSession</code> 避開靜音模式的機制，提出跨裝置音訊相容性與 HCI 視聽同步優化策略。
                         </li>
 
                         <li>
-                            <strong>PWA 離線緩存機制與 Service Worker 研發：</strong><br>
-                            研究 <strong>Progressive Web App (PWA)</strong> 規範，實作基於 <code>Cache-First</code> 策略的 Service Worker。調試生命週期中的非同步處理邏輯，探討大量影音樣本在有限快取空間（Quota Management）下的攔截策略。
+                            <strong>框架生命週期機制研究與 PWA 離線快取架構：</strong><br>
+                            深入對比原生 DOM 與 Vue 3 <strong>Unmount 銷毀機制</strong>對多媒體硬體資源回收的影響，避免元素隱藏後的背景音訊資源佔用；遵循 PWA 規範實作基於 <code>Cache-First</code> 策略的 Service Worker，調試音訊大檔案在瀏覽器有限 Quota 下的快取攔截與離線加載邏輯。
                         </li>
 
                         <li>
-                            <strong>音訊處理演算法推導與逆向工程：</strong><br>
-                            針對影音編輯工具進行 <strong>Phase Vocoder</strong> 與 <strong>WSOLA</strong> 演算法應用推導。分析音訊壓縮（AAC）在高頻產生的相位失真現象，展現數位訊號處理（DSP）的邏輯分析能力。
-                        </li>
-
-                        <li>
-                            <strong>Web MIDI 動態移調演算法與精確排程優化：</strong><br>
-                            實作基於 <code>Midi.js</code> 與 <code>Tone.js</code> 的解析播放系統。開發即時移調演算法（<code>note.midi + transpose</code>），並針對 Web 環境下的非同步競爭問題，實作 <strong>時間偏移補償（Time Offset Compensation）</strong>，解決首音缺失問題並確保 100% 播放還原度。
-                        </li>
-
-                        <li><strong>異步數據流與狀態管理優化：</strong><br>
-                            針對多媒體 App 在連續上傳場景下的數據覆蓋衝突進行優化。實作狀態重置機制 (State Reset) 與基於 Tone.now() 的動態排程校準，解決 Web Audio Context 時間軸不一致導致的播放失效問題。
-                        </li>
-
-                        <li>
-                            <strong>個人演奏實證與高品質數據採集：</strong><br>
-                            強調演奏能力為數位創作之靈魂。專案作品均採集自個人透過 <strong>Perfect Piano 錄製模式</strong> 手動彈奏之數據，證明具備操作樂器以獲取精確 MIDI 序列（包含 Time Offset 與力度細節）的專業 Domain Knowledge。
-                        </li>
-
-                        <li>
-                            <strong>前端依賴管理與生產環境調試：</strong><br>
-                            分析並解決 Web 環境下 <code>ReferenceError</code> 與 CDN 版本不匹配異常。針對 <code>file://</code> 與 <code>http://</code> 協議下的安全沙盒限制進行調試，確保多媒體資源在不同部署環境下的穩定性。
-                        </li>
-
-                        <li>
-                            <strong>數據動態過濾與原生 JS 邏輯實作：</strong><br>
-                            運用原生 JavaScript 實作複雜內容過濾系統，管理超過 60 組多媒體索引數據。針對長列表實作響應式顯示優化，顯著提升資訊檢索與渲染效率。
-                        </li>
-
-                        <li>
-                            <strong>數位真實性驗證機制設計：</strong><br>
-                            結合 MIDI 時間軸連續性分析與物理證明，建立「演奏來源證明（Provenance）」驗證流程。探討 AI 時代如何透過技術手段確保數位影音內容的真實來源與不可竄改性。
+                            <strong>高質量演奏數據採集與數位音訊真實性驗證：</strong><br>
+                            結合音樂領域 Domain Knowledge，以雙拇指於行動裝置實彈錄製 40+ 首高難度特攝與動漫經典樂曲（含 BPM 130+ 密集音符序列），採集保留人性微動態（Velocity 與 Time Offset）的原始 MIDI 數據；結合時間軸連續性分析，建立數位演奏來源證明（Provenance）機制。
                         </li>
                     </ul>
                 </li>
