@@ -692,8 +692,8 @@
         </a>
     </span><br>
                     <span class="project-subtitle">
-        技術棧：HTML5 / CSS3 / 原生 JavaScript / Web Audio API / Tone.js / @tonejs/midi / Canvas 2D / PWA (Service Workers)
-    </span><br>
+    技術棧：HTML5 / CSS3 / 原生 JavaScript (ES6+) / Web Audio API / Tone.js / @tonejs/midi / HTML5 Video & File API / Canvas 2D / 響應式 SVG / PWA (Service Workers)
+</span><br>
 
                     <ul style="margin-top: 5px; margin-bottom: 5px; list-style-type: disc;">
                         <li>
@@ -724,6 +724,15 @@
                         <li>
                             <strong>高質量演奏數據採集與數位音訊真實性驗證：</strong><br>
                             結合音樂領域 Domain Knowledge，以雙拇指於行動裝置實彈錄製 40+ 首高難度特攝與動漫經典樂曲（含 BPM 130+ 密集音符序列），採集保留人性微動態（Velocity 與 Time Offset）的原始 MIDI 數據；結合時間軸連續性分析，建立數位演奏來源證明（Provenance）機制。
+                        </li>
+                        <li>
+                            <strong>底層二進制協定解構與多端視覺化派生架構（MIDI Protocol Pipeline）：</strong><br>
+                            深入解析 MIDI 1.0 十六進位狀態字節（Status Byte）與數據結構（Note On/Off、Velocity、Time Offset），對比傳統 MIDI 5-Pin DIN 串列傳輸與現代 USB/BLE 通訊模型。構建單一數據源（Single Source of Truth）派生管線，實作由雙拇指即時採集之標準 <code>.mid</code> 數據平行轉譯為印刷級五線譜（MuseScore）、物理重力碰撞動畫（Marble Music）及垂直瀑布流聲光粒子渲染（Synthesia / SeeMusic），並以響應式向量 SVG 手繪完整數據流拓撲架構。
+                        </li>
+
+                        <li>
+                            <strong>畫格間預測編碼診斷、前端即時碼率分析與系統 I/O 機制解析：</strong><br>
+                            探討社群轉碼引發「畫面靜止但聲音正常」之視訊壓縮缺陷，以畫格間預測編碼（Inter-frame Compression）量化《Perfect Piano》（靜態低殘差 P/B 影格）與《Marimba Real》（高動態運動向量）的編碼差異；利用原生 <code>File API</code> 與 <code>HTMLVideoElement</code> 實作零依賴、無 CORS 限制的前端視訊解析工作台，即時提取解析度、時長與動態平均碼率（Bitrate）。同時深入行動作業系統底層，剖析快閃記憶體耗盡時引發的 I/O 寫入阻斷、推播分離與應用程式（如 LINE）快取渲染失效機制，並開發動態錄影容量估算模型。
                         </li>
                     </ul>
                 </li>
