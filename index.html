@@ -688,12 +688,12 @@
                 <li>
     <span class="project-title">
         <a href="https://chrischou19990904.github.io/Marimba_App_Introduction/Modulation.html" target="_blank">
-            數位音樂系統分析與 Web 互動音訊架構實踐（含 17 篇技術專題與互動工具，共17個子網頁）
+            數位音樂系統分析與 Web 互動音訊架構實踐（含 17 篇技術專題與互動工具，共 17 個子網頁）
         </a>
     </span><br>
                     <span class="project-subtitle">
-    技術棧：HTML5 / CSS3 / 原生 JavaScript (ES6+) / Web Audio API / Tone.js / @tonejs/midi / HTML5 Video & File API / Canvas 2D / 響應式 SVG / PWA (Service Workers)
-</span><br>
+        技術棧：HTML5 / CSS3 / 原生 JavaScript (ES6+) / Web Audio API / Tone.js / @tonejs/midi / Python (mido) / HTML5 Video & File API / Canvas 2D / 響應式 SVG / PWA (Service Workers)
+    </span><br>
 
                     <ul style="margin-top: 5px; margin-bottom: 5px; list-style-type: disc;">
                         <li>
@@ -722,9 +722,10 @@
                         </li>
 
                         <li>
-                            <strong>高質量演奏數據採集與數位音訊真實性驗證：</strong><br>
-                            結合音樂領域 Domain Knowledge，以雙拇指於行動裝置實彈錄製 40+ 首高難度特攝與動漫經典樂曲（含 BPM 130+ 密集音符序列），採集保留人性微動態（Velocity 與 Time Offset）的原始 MIDI 數據；結合時間軸連續性分析，建立數位演奏來源證明（Provenance）機制。
+                            <strong>高質量演奏數據採集與 Python 自動化分治管線（Divide & Conquer Pipeline）：</strong><br>
+                            以雙拇指於行動裝置實彈錄製 52 首高難度特攝、靈幻經典與動漫樂曲（含 BPM 130+ 密集音符序列），採集保留人性微動態（Velocity 與 Time Offset）的原始 MIDI 數據。針對長篇曲目觸控人體工學疲勞與單點容錯率瓶頸，設計分治錄製流程，並<strong>自主研發 Python 自動化腳本（基於 <code>mido</code>）</strong>：跨軌道抽取有效音符、自動剪除錄音首尾等待空檔，並依據絕對物理時間重構 Delta Time，達成無縫緊密的二進位時間軸拼裝。
                         </li>
+
                         <li>
                             <strong>底層二進制協定解構與多端視覺化派生架構（MIDI Protocol Pipeline）：</strong><br>
                             深入解析 MIDI 1.0 十六進位狀態字節（Status Byte）與數據結構（Note On/Off、Velocity、Time Offset），對比傳統 MIDI 5-Pin DIN 串列傳輸與現代 USB/BLE 通訊模型。構建單一數據源（Single Source of Truth）派生管線，實作由雙拇指即時採集之標準 <code>.mid</code> 數據平行轉譯為印刷級五線譜（MuseScore）、物理重力碰撞動畫（Marble Music）及垂直瀑布流聲光粒子渲染（Synthesia / SeeMusic），並以響應式向量 SVG 手繪完整數據流拓撲架構。
